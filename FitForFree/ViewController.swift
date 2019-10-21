@@ -16,6 +16,23 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     var dataExercises: NSDictionary!
     
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+        
+        exerciseTable.delegate = self
+        exerciseTable.dataSource = self
+        dietTable.delegate = self
+        dietTable.dataSource = self
+        
+        let path = Bundle.main.path(forResource: "Exercises", ofType: "plist")
+        dataExercises = NSDictionary(contentsOfFile: path!)
+}
+    
+    // MARK: - TableView functions
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
@@ -35,19 +52,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             return cell
         }
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
-        exerciseTable.delegate = self
-        exerciseTable.dataSource = self
-        dietTable.delegate = self
-        dietTable.dataSource = self
-        
-        let path = Bundle.main.path(forResource: "Exercises", ofType: "plist")
-        dataExercises = NSDictionary(contentsOfFile: path!)
-}
     
     // MARK: - Navigation
 

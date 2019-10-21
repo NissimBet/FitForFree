@@ -8,14 +8,18 @@
 
 import UIKit
 
-class exerciseViewController: UIViewController {
+class exerciseViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    
 
     @IBOutlet weak var navBar: UINavigationItem!
     @IBOutlet weak var lblRoutineName: UILabel!
-    @IBOutlet weak var lblRoutineExercises: UILabel!
     @IBOutlet weak var lblDescription: UILabel!
     
+    @IBOutlet weak var excercisesTable: UITableView!
+    
     var workoutInfo: NSObject!
+    var excercises: [ExcerciseData] = [ExcerciseData]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,12 +29,22 @@ class exerciseViewController: UIViewController {
         
         let workoutArray: [String] = (workoutInfo.value(forKey: "WarmUp") as! NSArray).compactMap({ $0 as? String })
 
-        lblRoutineExercises.text = workoutArray.joined(separator: "\n")
-        
-        
     }
     
 
+    // MARK: - Table View functions
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "workoutDataExcerciseCell", for: indexPath)
+        cell.textLabel!.text = "a"
+        
+        return cell
+    }
+    
     /*
     // MARK: - Navigation
 

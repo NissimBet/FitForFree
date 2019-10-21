@@ -17,6 +17,8 @@
 		1D546F132352BEC6005026D6 /* dietsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D546F122352BEC6005026D6 /* dietsTableViewController.swift */; };
 		1D546F152352BF7C005026D6 /* Exercises.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D546F142352BF7C005026D6 /* Exercises.plist */; };
 		1D546F172352C11A005026D6 /* exerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D546F162352C11A005026D6 /* exerciseViewController.swift */; };
+		FBAA1E75235DF7EC000833DD /* WorkoutData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAA1E74235DF7EC000833DD /* WorkoutData.swift */; };
+		FBAA1E77235DF82D000833DD /* ExcerciseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAA1E76235DF82D000833DD /* ExcerciseData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		1D546F122352BEC6005026D6 /* dietsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dietsTableViewController.swift; sourceTree = "<group>"; };
 		1D546F142352BF7C005026D6 /* Exercises.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Exercises.plist; sourceTree = "<group>"; };
 		1D546F162352C11A005026D6 /* exerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = exerciseViewController.swift; sourceTree = "<group>"; };
+		FBAA1E74235DF7EC000833DD /* WorkoutData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutData.swift; sourceTree = "<group>"; };
+		FBAA1E76235DF82D000833DD /* ExcerciseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcerciseData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +52,6 @@
 		1D546EEE2352BABD005026D6 = {
 			isa = PBXGroup;
 			children = (
-				1D546F142352BF7C005026D6 /* Exercises.plist */,
 				1D546EF92352BABD005026D6 /* FitForFree */,
 				1D546EF82352BABD005026D6 /* Products */,
 			);
@@ -65,10 +68,13 @@
 		1D546EF92352BABD005026D6 /* FitForFree */ = {
 			isa = PBXGroup;
 			children = (
+				1D546F142352BF7C005026D6 /* Exercises.plist */,
 				1D546EFA2352BABD005026D6 /* AppDelegate.swift */,
 				1D546EFC2352BABD005026D6 /* SceneDelegate.swift */,
 				1D546EFE2352BABD005026D6 /* ViewController.swift */,
 				1D546F002352BABD005026D6 /* Main.storyboard */,
+				FBAA1E74235DF7EC000833DD /* WorkoutData.swift */,
+				FBAA1E76235DF82D000833DD /* ExcerciseData.swift */,
 				1D546F162352C11A005026D6 /* exerciseViewController.swift */,
 				1D546F122352BEC6005026D6 /* dietsTableViewController.swift */,
 				1D546F0E2352BBFF005026D6 /* ExercisesTableViewController.swift */,
@@ -154,7 +160,9 @@
 				1D546EFF2352BABD005026D6 /* ViewController.swift in Sources */,
 				1D546F132352BEC6005026D6 /* dietsTableViewController.swift in Sources */,
 				1D546F172352C11A005026D6 /* exerciseViewController.swift in Sources */,
+				FBAA1E77235DF82D000833DD /* ExcerciseData.swift in Sources */,
 				1D546EFB2352BABD005026D6 /* AppDelegate.swift in Sources */,
+				FBAA1E75235DF7EC000833DD /* WorkoutData.swift in Sources */,
 				1D546EFD2352BABD005026D6 /* SceneDelegate.swift in Sources */,
 				1D546F0F2352BBFF005026D6 /* ExercisesTableViewController.swift in Sources */,
 			);

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Workouts</key>
+	<array>
+		<dict>
+			<key>Name</key>
+			<string>Workout 1</string>
+			<key>WarmUp</key>
+			<array>
+				<dict>
+					<key>name</key>
+					<string>front lunges</string>
+					<key>excerciseDescription</key>
+					<string>20 YDS front lunges</string>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>lateral lunges</string>
+					<key>excerciseDescription</key>
+					<string>20 YDS lateral lunges</string>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>back lunges with torso stretch</string>
+					<key>excerciseDescription</key>
+					<string>20 YDS Back Lunges with torso stretch</string>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>front kick</string>
+					<key>excerciseDescription</key>
+					<string>20 YDS front kick</string>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>toe touches</string>
+					<key>excerciseDescription</key>
+					<string>20 yds Toe touches with back Kick</string>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>knee to chest</string>
+					<key>excerciseDescription</key>
+					<string>20 yds knee to chest</string>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>quadricep stretch</string>
+					<key>excerciseDescription</key>
+					<string>20 yds quadricep stretch</string>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>skipping</string>
+					<key>excerciseDescription</key>
+					<string>20 yds skipping</string>
+				</dict>
+			</array>
+			<key>Description</key>
+			<string>Workout inicial</string>
+		</dict>
+	</array>
+</dict>
+</plist>

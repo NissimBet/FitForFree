@@ -42,15 +42,26 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         for work in allWorkouts! {
             let excercises = work.value(forKey: "excerciseList") as! [NSDictionary]
-        
-            let tempWorkout = WorkoutData(name: work.value(forKey: "name") as! String, description: work.value(forKeyPath: "workoutDescription") as! String, excerciseList: [])
+            var newExcercises = [ExcerciseData]()
+            
+            let tempWorkout = WorkoutData(name: "", description: "", excerciseList: [ExcerciseData]())
+            
+            tempWorkout.name = (work.value(forKey: "name") as! String)
+            tempWorkout.workoutDescription = (work.value(forKey: "workoutDescription") as! String)
             
             for exc in excercises {
-                tempWorkout.excerciseList.append(ExcerciseData(name: exc.value(forKey: "name") as! String, description: exc.value(forKey: "excerciseDescription") as! String))
+                let tempExcercise = ExcerciseData(name: "", description: "")
+                
+                tempExcercise.name = (exc.value(forKey: "name") as! String)
+                tempExcercise.excerciseDescription = (exc.value(forKey: "excerciseDescription") as! String)
+                
+                newExcercises.append(tempExcercise)
+                
             }
-            
+            tempWorkout.excerciseList = newExcercises
             workouts.append(tempWorkout)
         }
+        
     }
     
     func setImageSettings() {

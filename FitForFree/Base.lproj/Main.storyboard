@@ -100,12 +100,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pbS-9w-smY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1546" y="139"/>
+            <point key="canvasLocation" x="1585" y="139"/>
         </scene>
-        <!--Exercise View Controller-->
+        <!--Single Workout View Controller-->
         <scene sceneID="NYB-fa-D63">
             <objects>
-                <viewController id="z4X-MG-36c" customClass="exerciseViewController" customModule="FitForFree" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="z4X-MG-36c" customClass="SingleWorkoutViewController" customModule="FitForFree" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="60B-un-Gip">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -136,46 +136,98 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="C9D-A9-zXq">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WorkoutInfoExcerciseCell" id="C9D-A9-zXq">
                                         <rect key="frame" x="0.0" y="28" width="240" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="C9D-A9-zXq" id="Mcp-VP-aGi">
                                             <rect key="frame" x="0.0" y="0.0" width="240" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="lPr-cU-1FE" kind="show" identifier="segueToExcercise" id="fwB-C4-4sk"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fTj-MI-QnN">
+                                <rect key="frame" x="233" y="599" width="103" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Iniciar Ejercicio"/>
+                                <connections>
+                                    <segue destination="TYx-S1-4Ti" kind="show" identifier="segueRunWorkout" id="0NA-3z-mk1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="chF-Vf-ie3"/>
                     </view>
                     <navigationItem key="navigationItem" id="IDv-59-zms"/>
                     <connections>
-                        <outlet property="excercisesTable" destination="rVL-um-WZA" id="Y1g-Oq-dRn"/>
-                        <outlet property="lblDescription" destination="yE1-rT-0cb" id="X0X-2x-gRI"/>
-                        <outlet property="lblRoutineName" destination="RBk-5B-2Nb" id="7LV-c5-7Ix"/>
-                        <outlet property="navBar" destination="vmd-K7-pMp" id="1Rt-RX-kos"/>
+                        <outlet property="lbTitle" destination="RBk-5B-2Nb" id="pgV-V6-pMG"/>
+                        <outlet property="lbWorkoutDescription" destination="yE1-rT-0cb" id="QPX-Wa-VQP"/>
+                        <outlet property="tableExcercises" destination="rVL-um-WZA" id="srP-ba-1Sf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LHx-Xi-MMO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2417" y="139"/>
+            <point key="canvasLocation" x="2416.8000000000002" y="138.98050974512745"/>
         </scene>
-        <!--Exercise View Controller-->
+        <!--Excercise View Controller-->
         <scene sceneID="8ky-rn-V41">
             <objects>
-                <viewController id="lPr-cU-1FE" customClass="exerciseViewController" customModule="FitForFree" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="lPr-cU-1FE" customClass="ExcerciseViewController" customModule="FitForFree" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lo9-oU-jMQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gra-Hd-M4S">
+                                <rect key="frame" x="126" y="197" width="122" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ueh-8y-9TD">
+                                <rect key="frame" x="67" y="61" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KB0-QS-qbx">
+                                <rect key="frame" x="126" y="281" width="122" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="pYD-3V-blb"/>
                     </view>
+                    <navigationItem key="navigationItem" id="9ZG-11-7Gg"/>
+                    <connections>
+                        <outlet property="imgExc" destination="ueh-8y-9TD" id="A2d-uA-9n1"/>
+                        <outlet property="lbExcDescription" destination="KB0-QS-qbx" id="GfM-c9-BRG"/>
+                        <outlet property="lbExcName" destination="gra-Hd-M4S" id="wBO-tV-WCE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yLM-69-4fx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3103" y="-116"/>
+            <point key="canvasLocation" x="3399" y="-202"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="MUq-9j-3Ad">
+            <objects>
+                <viewController id="TYx-S1-4Ti" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gVM-Yl-czl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="UTd-v7-FDq"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="auA-d8-RLD"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t07-PP-WJg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3398" y="492"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="11B-hB-c4c">

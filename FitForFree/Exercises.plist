@@ -5,9 +5,9 @@
 	<key>Workouts</key>
 	<array>
 		<dict>
-			<key>Name</key>
+			<key>name</key>
 			<string>Workout 1</string>
-			<key>WarmUp</key>
+			<key>excerciseList</key>
 			<array>
 				<dict>
 					<key>name</key>
@@ -58,7 +58,7 @@
 					<string>20 yds skipping</string>
 				</dict>
 			</array>
-			<key>Description</key>
+			<key>workoutDescription</key>
 			<string>Workout inicial</string>
 		</dict>
 	</array>

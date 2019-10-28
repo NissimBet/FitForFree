@@ -8,13 +8,14 @@
 
 import UIKit
 
-class SingleWorkoutViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class SingleWorkoutViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, StartedWorkoutState {
     
     @IBOutlet weak var lbTitle: UILabel!
     @IBOutlet weak var lbWorkoutDescription: UILabel!
     @IBOutlet weak var tableExcercises: UITableView!
     
     var workoutData : WorkoutData!
+    var workoutState : WorkoutState = WorkoutState()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,7 +56,42 @@ class SingleWorkoutViewController: UIViewController, UITableViewDataSource, UITa
             
         }
         else if segue.identifier == "segueRunWorkout" {
+            let workoutRunner = segue.destination as! WorkoutRunnerViewController
             
+            workoutRunner.workoutDelegate = self
+            workoutRunner.excerciseData = workoutData.excerciseList[0]
+            workoutRunner.excTime = 15
+            
+            switch workoutState.currentState {
+            case .NOT_STARTED:
+                workoutRunner.currentExc = 0
+                workoutState.numExcercise = 0
+                workoutState.currentState = .WARMUP
+                break
+            case .WARMUP:
+                workoutState.currentState = .EXCERCISE
+                break
+            case .COOLDOWN:
+                workoutState.currentState = .FINISHED
+                break
+            default:
+                break
+            }
         }
+    }
+    
+    // MARK: - Workout State functions
+    func finishedExcercise(excercise number: Int) {
+        workoutState.numExcercise = number + 1
+   }
+       
+    func getNextExcerciseData() -> ExcerciseData {
+        let nextExcercise : ExcerciseData = workoutData.excerciseList[workoutState.numExcercise]
+        
+        return nextExcercise
+       }
+    
+    func isThisLastExcercise(num: Int) -> Bool {
+        return num == workoutData.excerciseList.count
     }
 }

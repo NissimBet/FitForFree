@@ -9,12 +9,14 @@
 import UIKit
 
 class WorkoutState: NSObject {
-    numExcercise: Int!
-    currentState: State!
-    
-    enum States {
-        EXCERCISE,
-        COOLDOWN,
-        WARMUP
-    }
+    var numExcercise: Int!
+    var currentState: AppState! = .NOT_STARTED
+}
+
+enum AppState {
+    case NOT_STARTED
+    case EXCERCISE
+    case COOLDOWN
+    case WARMUP
+    case FINISHED
 }

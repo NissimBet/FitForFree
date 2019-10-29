@@ -95,6 +95,10 @@ class SingleWorkoutViewController: UIViewController, UITableViewDataSource, UITa
         return num == workoutData.excerciseList.count
     }
     func resetWorkoutProgress() -> Void {
-        
+        workoutState = WorkoutState()
+        workoutState.currentState = .NOT_STARTED
+    }
+    func finishWorkout() -> Void {
+        StoreWorkoutDataInStorage.saveDailyData(workout: workoutData)
     }
 }

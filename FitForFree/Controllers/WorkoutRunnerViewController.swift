@@ -13,6 +13,7 @@ protocol StartedWorkoutState {
     func getNextExcerciseData() -> ExcerciseData
     func isThisLastExcercise(num: Int) -> Bool
     func resetWorkoutProgress() -> Void
+    func finishWorkout() -> Void
 }
 
 class WorkoutRunnerViewController: UIViewController {
@@ -21,7 +22,6 @@ class WorkoutRunnerViewController: UIViewController {
     @IBOutlet weak var lbExcNAme: UILabel!
     @IBOutlet weak var lbExcDesc: UILabel!
     @IBOutlet weak var lbTimer: UILabel!
-    
     
     var workoutDelegate : StartedWorkoutState!
     var currentExc : Int = 0

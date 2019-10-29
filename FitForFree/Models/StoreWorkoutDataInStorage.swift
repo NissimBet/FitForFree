@@ -7,14 +7,46 @@
 //
 
 import UIKit
+import CoreData
 
-class StoreWorkoutDataInStorage: NSObject, Codable {
-    static func getStorageURL() -> URL {
-        if let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
-            return url
+class StoreWorkoutDataInStorage: NSObject {
+    static func saveDailyData(workout: WorkoutData) -> Void {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+
+        let progress = NSEntityDescription.entity(forEntityName: "Progress", in: context)!
+        
+        let today = Date()
+        if let name = workout.name {
+            do {
+                let newProgress = NSManagedObject(entity: progress, insertInto: context)
+                newProgress.setValue(today, forKey: "day")
+                newProgress.setValue(name, forKey: "name")
+                newProgress.setValue(30, forKey: "calories")
+                
+                try context.save()
+            }
+            catch let error as NSError {
+                print("Error Saving. \(error)")
+            }
         }
-        else {
-            fatalError("Could not find url for directory")
+    }
+    
+    static func loadAllData() -> [NSManagedObject] {
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        let managedContext = appDelegate!.persistentContainer.viewContext
+        
+        let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Progress")
+        
+        do {
+            let result = try managedContext.fetch(fetch) as! [NSManagedObject]
+            
+            return result
         }
+        catch {
+            print("Could not load data")
+        }
+        
+        return [NSManagedObject]()
     }
 }

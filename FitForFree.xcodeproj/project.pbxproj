@@ -39,6 +39,8 @@
 		FB2F86722363842400FF7AF3 /* WorkoutState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutState.swift; sourceTree = "<group>"; };
 		FB9794D0236889B100415849 /* FinishedWorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishedWorkoutViewController.swift; sourceTree = "<group>"; };
 		FB9794D22368993F00415849 /* StoreWorkoutDataInStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreWorkoutDataInStorage.swift; sourceTree = "<group>"; };
+		FB9794E22368A1F400415849 /* Progress+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Progress+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FB9794E32368A20200415849 /* Progress+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Progress+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		FBAA1E74235DF7EC000833DD /* WorkoutData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutData.swift; sourceTree = "<group>"; };
 		FBAA1E76235DF82D000833DD /* ExcerciseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcerciseData.swift; sourceTree = "<group>"; };
 		FBC8358523636291009097B9 /* SingleWorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleWorkoutViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 		1D546EF92352BABD005026D6 /* FitForFree */ = {
 			isa = PBXGroup;
 			children = (
+				FB9794E02368A1E600415849 /* Data Storage */,
 				FBEC467C23634AEC009EA891 /* Controllers */,
 				FBEC4669236349BE009EA891 /* Models */,
 				1D546F142352BF7C005026D6 /* Exercises.plist */,
@@ -89,6 +92,17 @@
 				1D546F082352BABE005026D6 /* Info.plist */,
 			);
 			path = FitForFree;
+			sourceTree = "<group>";
+		};
+		FB9794E02368A1E600415849 /* Data Storage */ = {
+			isa = PBXGroup;
+			children = (
+				FB9794E12368A1F200415849 /* SavedPogress.xcdatamodeld */,
+				FB9794E22368A1F400415849 /* Progress+CoreDataClass.swift */,
+				FB9794E32368A20200415849 /* Progress+CoreDataProperties.swift */,
+			);
+			name = "Data Storage";
+			path = "../../Data Storage";
 			sourceTree = "<group>";
 		};
 		FBEC4669236349BE009EA891 /* Models */ = {
@@ -396,6 +410,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FB9794E12368A1F200415849 /* SavedPogress.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+			);
+			path = SavedPogress.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 1D546EEF2352BABD005026D6 /* Project object */;
 }

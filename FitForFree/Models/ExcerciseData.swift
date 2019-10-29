@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ExcerciseData: NSObject {
+class ExcerciseData: NSObject, Codable {
     var name: String!
     var excerciseDescription: String!
     var videoURL: String?

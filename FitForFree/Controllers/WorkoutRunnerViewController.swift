@@ -12,6 +12,7 @@ protocol StartedWorkoutState {
     func finishedExcercise(excercise number: Int) -> Void
     func getNextExcerciseData() -> ExcerciseData
     func isThisLastExcercise(num: Int) -> Bool
+    func resetWorkoutProgress() -> Void
 }
 
 class WorkoutRunnerViewController: UIViewController {
@@ -35,12 +36,38 @@ class WorkoutRunnerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-               
+        
         if !isTimerRunning {
-            print("A")
             runTimer()
         }
+        
+        // propio boton para cancelar o no el workout
+        navigationItem.hidesBackButton = true
+        let newButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(backActionInterceptor(sender:)))
+        navigationItem.rightBarButtonItem = newButton
+        
         reloadData(with: excerciseData)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        if timer != nil {
+            timer?.invalidate()
+        }
+    }
+    
+    @IBAction func backActionInterceptor(sender: UIBarButtonItem) {
+        let alert = UIAlertController(title: "Cancelar Rutina", message: "Si regresas la rutina se cancelará", preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "Ok", style: .default, handler: { (UIAlertAction) in
+            self.workoutDelegate.resetWorkoutProgress()
+            self.navigationController?.popViewController(animated: true)
+        })
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        alert.addAction(okAction)
+        alert.addAction(cancelAction)
+        self.present(alert, animated: true, completion: nil)
     }
     
     func reloadData(with nextData : ExcerciseData) {
@@ -56,12 +83,16 @@ class WorkoutRunnerViewController: UIViewController {
     
     func finishExcercise() {
         workoutDelegate.finishedExcercise(excercise: currentExc)
-        let nextExc = workoutDelegate.getNextExcerciseData()
-        excerciseData = nextExc
+        currentExc += 1
         isLast = workoutDelegate.isThisLastExcercise(num: currentExc)
         
         if !isLast {
+            let nextExc = workoutDelegate.getNextExcerciseData()
+            excerciseData = nextExc
             reloadData(with: excerciseData)
+        }
+        else {
+            performSegue(withIdentifier: "segueToWorkoutSuccess", sender: self)
         }
     }
     
@@ -110,14 +141,15 @@ class WorkoutRunnerViewController: UIViewController {
     @IBAction func doPauseTimer(_ sender: Any) {
         pauseTimer()
     }
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "segueToWorkoutSuccess" {
+            let vista = segue.destination as! FinishedWorkoutViewController
+            vista.calories = 320
+        }
     }
-    */
-
+    
 }

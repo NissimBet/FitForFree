@@ -60,7 +60,7 @@ class SingleWorkoutViewController: UIViewController, UITableViewDataSource, UITa
             
             workoutRunner.workoutDelegate = self
             workoutRunner.excerciseData = workoutData.excerciseList[0]
-            workoutRunner.excTime = 15
+            workoutRunner.excTime = 5
             
             switch workoutState.currentState {
             case .NOT_STARTED:
@@ -81,7 +81,7 @@ class SingleWorkoutViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     // MARK: - Workout State functions
-    func finishedExcercise(excercise number: Int) {
+    func finishedExcercise(excercise number: Int) -> Void {
         workoutState.numExcercise = number + 1
    }
        
@@ -93,5 +93,8 @@ class SingleWorkoutViewController: UIViewController, UITableViewDataSource, UITa
     
     func isThisLastExcercise(num: Int) -> Bool {
         return num == workoutData.excerciseList.count
+    }
+    func resetWorkoutProgress() -> Void {
+        
     }
 }

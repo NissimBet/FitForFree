@@ -71,7 +71,7 @@ class WorkoutRunnerViewController: UIViewController {
     }
     
     func reloadData(with nextData : ExcerciseData) {
-        imgExcIMage.image = UIImage(named: "noImage")
+        imgExcIMage.image = Utils.getImage()
         lbExcDesc.text = excerciseData.excerciseDescription
         lbExcNAme.text = excerciseData.name
         

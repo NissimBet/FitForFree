@@ -32,20 +32,22 @@ class StoreWorkoutDataInStorage: NSObject {
         }
     }
     
-    static func loadAllData() -> [NSManagedObject] {
+    static func loadAllData() -> [SavedWorkout] {
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
         let managedContext = appDelegate!.persistentContainer.viewContext
         
         let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "SavedWorkout")
         
         do {
-            let result = try managedContext.fetch(fetch) as! [NSManagedObject]
-            return result
+            let result = try managedContext.fetch(fetch) as! [SavedWorkout]
+            return result.sorted(by: { (data1, data2) in
+                data1.day.compare(data2.day) == ComparisonResult.orderedAscending
+            })
         }
         catch {
             print("Could not load data")
         }
         
-        return [NSManagedObject]()
+        return [SavedWorkout]()
     }
 }

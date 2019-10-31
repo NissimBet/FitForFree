@@ -17,8 +17,8 @@ extension SavedWorkout {
         return NSFetchRequest<SavedWorkout>(entityName: "SavedWorkout")
     }
 
-    @NSManaged public var name: String?
-    @NSManaged public var day: Date?
+    @NSManaged public var name: String
+    @NSManaged public var day: Date
     @NSManaged public var calories: Double
 
 }

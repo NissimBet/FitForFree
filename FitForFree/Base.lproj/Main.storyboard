@@ -41,6 +41,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Fce-Lv-sNd" kind="show" identifier="segueToPlanesAlimenticios" id="REH-sS-v7l"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -68,7 +71,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="781.60000000000002" y="138.98050974512745"/>
+            <point key="canvasLocation" x="362" y="700"/>
+        </scene>
+        <!--Plan Alimenticio View Controller-->
+        <scene sceneID="JuU-DC-ei4">
+            <objects>
+                <viewController id="Fce-Lv-sNd" customClass="PlanAlimenticioViewController" customModule="FitForFree" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BNj-Fo-494">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="kfZ-Wc-xs0"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="P2R-M6-MCt"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dga-op-KR2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1585" y="929"/>
         </scene>
         <!--All Workouts Table View Controller-->
         <scene sceneID="9fy-4z-bN8">
@@ -291,9 +310,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zaw-7f-GZT">
-                                <rect key="frame" x="214" y="561" width="46" height="30"/>
+                                <rect key="frame" x="256" y="584" width="57" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Finalizar"/>
+                                <connections>
+                                    <action selector="doFinish:" destination="YKL-oI-I7Y" eventType="touchUpInside" id="MPa-yW-1nT"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -302,13 +324,14 @@
                     <navigationItem key="navigationItem" id="cVj-oV-JPX">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="j2I-k2-tmQ">
                             <connections>
-                                <segue destination="drc-Ya-wfX" kind="show" identifier="segueToWorkoutHistory" id="dl9-Bu-wgN"/>
+                                <action selector="doDone:" destination="YKL-oI-I7Y" id="4Fd-DB-2AA"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="imgChart" destination="fml-RS-ZJP" id="1It-ZB-TfG"/>
                         <outlet property="lbCongratx" destination="Sxa-1v-5Vn" id="RfZ-Dr-qJP"/>
+                        <segue destination="drc-Ya-wfX" kind="show" identifier="segueToWorkoutHistory" id="5LB-Ba-jhu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ink-dm-aIO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -322,14 +345,39 @@
                     <view key="view" contentMode="scaleToFill" id="UkJ-4i-LGw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L8b-uH-oEz">
+                                <rect key="frame" x="166" y="122" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ayO-Uj-mCn">
+                                <rect key="frame" x="16" y="246" width="343" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="kuD-NT-Ods"/>
                     </view>
-                    <navigationItem key="navigationItem" id="8n4-Af-mZy"/>
+                    <navigationItem key="navigationItem" id="8n4-Af-mZy">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="40p-rv-aFk">
+                            <connections>
+                                <action selector="doDoneReturn:" destination="drc-Ya-wfX" id="JEh-7i-nUM"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="lbWeekBurns" destination="ayO-Uj-mCn" id="GOW-Mm-W3f"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e9W-5k-w0e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5225" y="492"/>
+            <point key="canvasLocation" x="5224.8000000000002" y="491.60419790104953"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="11B-hB-c4c">
@@ -347,7 +395,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W2C-5t-wsf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-20" y="139"/>
+            <point key="canvasLocation" x="-439" y="700"/>
         </scene>
     </scenes>
 </document>

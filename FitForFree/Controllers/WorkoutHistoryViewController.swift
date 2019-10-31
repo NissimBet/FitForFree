@@ -10,13 +10,29 @@ import UIKit
 
 class WorkoutHistoryViewController: UIViewController {
 
+    @IBOutlet weak var lbWeekBurns: UILabel!
+    
+    var allWorkouts = [SavedWorkout]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        navigationItem.hidesBackButton = true
+        
+        allWorkouts = StoreWorkoutDataInStorage.loadAllData()
+        let today = Date()
+        
+        let weeksData = allWorkouts.filter { (data) in
+            return Calendar.current.dateComponents([.day], from: data.day, to: today).day! <= 7
+        }
+        
+        lbWeekBurns.text = "Esta semana haz quemado " + String(format: "%.3f", weeksData.reduce(0) { acc, data in acc + data.calories }) + " calorias"
     }
     
-
+    @IBAction func doDoneReturn(_ sender: Any) {
+        navigationController?.popToRootViewController(animated: true)
+    }
+    
     /*
     // MARK: - Navigation
 

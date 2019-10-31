@@ -18,14 +18,25 @@ class FinishedWorkoutViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        imgChart.image = UIImage(named: "noImage")
+        imgChart.image = Utils.getImage()
         lbCongratx.text = "Felicidades!! Hoy quemaste \(calories)!!"
         
         navigationItem.hidesBackButton = true
         // Do any additional setup after loading the view.
     }
     
-
+    func doSegueToWorkoutHistory() {
+        performSegue(withIdentifier: "segueToWorkoutHistory", sender: self)
+    }
+    
+    @IBAction func doDone(_ sender: Any) {
+        doSegueToWorkoutHistory()
+    }
+    
+    @IBAction func doFinish(_ sender: Any) {
+        doSegueToWorkoutHistory()
+    }
+    
     /*
     // MARK: - Navigation
 

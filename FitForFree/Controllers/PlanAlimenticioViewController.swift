@@ -1,28 +1,19 @@
 //
-//  ExcerciseViewController.swift
+//  PlanAlimenticioViewController.swift
 //  FitForFree
 //
-//  Created by Alumno on 10/25/19.
+//  Created by Alumno on 10/31/19.
 //  Copyright © 2019 Rick. All rights reserved.
 //
 
 import UIKit
 
-class ExcerciseViewController: UIViewController {
+class PlanAlimenticioViewController: UIViewController {
 
-    @IBOutlet weak var lbExcName: UILabel!
-    @IBOutlet weak var imgExc: UIImageView!
-    @IBOutlet weak var lbExcDescription: UILabel!
-    
-    var excerciseData : ExcerciseData!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = excerciseData.name
-        lbExcName.text = excerciseData.name
-        imgExc.image = Utils.getImage(name: excerciseData.videoURL)
-        lbExcDescription.text = excerciseData.excerciseDescription
+        // Do any additional setup after loading the view.
     }
     
 

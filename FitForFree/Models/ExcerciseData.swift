@@ -11,7 +11,7 @@ import UIKit
 class ExcerciseData: NSObject {
     var name: String!
     var excerciseDescription: String!
-    var videoURL: String?
+    var videoURL: String!
     
     init(name: String, description: String, videoURL: String = "") {
         self.name = name

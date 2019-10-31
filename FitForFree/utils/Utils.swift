@@ -10,8 +10,10 @@ import UIKit
 
 class Utils: NSObject {
     static func getImage(name: String = "noImage") -> UIImage {
-        let newImage = UIImage(named: "noImage")!
+        if let newImage = UIImage(named: name) {
+            return newImage
+        }
         
-        return newImage
+        return UIImage(named: "noImage")!
     }
 }

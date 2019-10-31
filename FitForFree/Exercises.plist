@@ -62,5 +62,36 @@
 			<string>Workout inicial</string>
 		</dict>
 	</array>
+	<key>Plans</key>
+	<array>
+		<dict>
+			<key>name</key>
+			<string>plan 1</string>
+			<key>planDescription</key>
+			<string>plan de prueba</string>
+			<key>tipoCuerpo</key>
+			<string>isomorfo</string>
+			<key>alimentos</key>
+			<array>
+				<string>arroz</string>
+				<string>pollo</string>
+				<string>vegetales</string>
+			</array>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>plan 2</string>
+			<key>planDescription</key>
+			<string>pla de no tan prueba</string>
+			<key>tipoCuerpo</key>
+			<string>no isomorfo</string>
+			<key>alimentos</key>
+			<array>
+				<string>pasta</string>
+				<string>pollo</string>
+				<string>carne</string>
+			</array>
+		</dict>
+	</array>
 </dict>
 </plist>

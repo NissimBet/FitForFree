@@ -18,7 +18,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var allData: NSDictionary!
     
     var workouts: [WorkoutData]! = [WorkoutData]()
-    // var planesDieta: [String]!
+    var planesDieta: [PlanAlimenticio]! = [PlanAlimenticio]()
     
     
     override func viewDidLoad() {
@@ -63,23 +63,45 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             workouts.append(tempWorkout)
         }
         
+        let allPlans = allData.object(forKey: "Plans") as? [NSDictionary]
+        
+        for plan in allPlans! {
+            let tempPlan = PlanAlimenticio(name: "", tipo: "", description: "", alimentos: [String]())
+            
+            tempPlan.name = (plan.value(forKey: "name") as! String)
+            tempPlan.planDescription = (plan.value(forKey: "planDescription") as! String)
+            tempPlan.tipoCuerpo = (plan.value(forKey: "tipoCuerpo") as! String)
+            
+            tempPlan.alimentos = (plan.value(forKey: "alimentos") as! [String])
+            
+            planesDieta.append(tempPlan)
+        }
+        
     }
     
     func setImageSettings() {
-        mainImage.image = UIImage(named: "mainPageImage")
+        mainImage.image = Utils.getImage(name: "mainPageImage")
         mainImage.contentMode = .scaleAspectFit
     }
     
     // MARK: - TableView functions
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if tableView == dietTable {
+            return planesDieta.count
+        }
         return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "dietCell", for: indexPath)
-        cell.textLabel?.text = ""
-        return cell
+        if tableView == dietTable {
+            let index = indexPath.row
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "dietCell", for: indexPath)
+            cell.textLabel?.text = planesDieta[index].name
+            return cell
+        }
+        return UITableViewCell()
     }
     
     // MARK: - Navigation
@@ -95,6 +117,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             let workoutsView = segue.destination as! AllWorkoutsTableViewController
             
             workoutsView.allWorkouts = workouts
+        }
+        else if segue.identifier == "segueToPlanesAlimenticios" {
+            
         }
     }
 

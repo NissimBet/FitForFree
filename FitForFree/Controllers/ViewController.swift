@@ -66,13 +66,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let allPlans = allData.object(forKey: "Plans") as? [NSDictionary]
         
         for plan in allPlans! {
-            let tempPlan = PlanAlimenticio(name: "", tipo: "", description: "", alimentos: [String]())
+            let tempPlan = PlanAlimenticio(name: "", tipo: "", description: "", desayuno: [String](), almuerzo: [String](), cena: [String]())
             
             tempPlan.name = (plan.value(forKey: "name") as! String)
             tempPlan.planDescription = (plan.value(forKey: "planDescription") as! String)
             tempPlan.tipoCuerpo = (plan.value(forKey: "tipoCuerpo") as! String)
             
-            tempPlan.alimentos = (plan.value(forKey: "alimentos") as! [String])
+            tempPlan.desayuno = (plan.value(forKey: "desayuno") as! [String])
+            tempPlan.almuerzo = (plan.value(forKey: "almuerzo") as! [String])
+            tempPlan.cena = (plan.value(forKey: "cena") as! [String])
             
             planesDieta.append(tempPlan)
         }
@@ -119,7 +121,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             workoutsView.allWorkouts = workouts
         }
         else if segue.identifier == "segueToPlanesAlimenticios" {
+            let planVista = segue.destination as! PlanAlimenticioViewController
             
+            let index = dietTable.indexPathForSelectedRow?.row
+            
+            planVista.planData = planesDieta[index!]
         }
     }
 

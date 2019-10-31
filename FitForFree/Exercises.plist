@@ -71,24 +71,20 @@
 			<string>plan de prueba</string>
 			<key>tipoCuerpo</key>
 			<string>isomorfo</string>
-			<key>alimentos</key>
+			<key>desayuno</key>
 			<array>
-				<string>arroz</string>
-				<string>pollo</string>
-				<string>vegetales</string>
+				<string>cereal</string>
+				<string>yogurt</string>
 			</array>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>plan 2</string>
-			<key>planDescription</key>
-			<string>pla de no tan prueba</string>
-			<key>tipoCuerpo</key>
-			<string>no isomorfo</string>
-			<key>alimentos</key>
+			<key>almuerzo</key>
 			<array>
-				<string>pasta</string>
+				<string>spagheti</string>
 				<string>pollo</string>
+				<string>arroz</string>
+			</array>
+			<key>cena</key>
+			<array>
+				<string>avena</string>
 				<string>carne</string>
 			</array>
 		</dict>

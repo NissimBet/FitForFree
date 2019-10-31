@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -19,6 +20,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     var workouts: [WorkoutData]! = [WorkoutData]()
     var planesDieta: [PlanAlimenticio]! = [PlanAlimenticio]()
+    var locationData : Location!
     
     
     override func viewDidLoad() {
@@ -39,6 +41,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let path = Bundle.main.path(forResource: "Exercises", ofType: "plist")
         allData = NSDictionary(contentsOfFile: path!)
         
+        // MARK: - Load Workout data
         let allWorkouts = allData.object(forKey: "Workouts") as? [NSDictionary]
         
         for work in allWorkouts! {
@@ -63,6 +66,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             workouts.append(tempWorkout)
         }
         
+        // MARK: - Load planes alimenticios
         let allPlans = allData.object(forKey: "Plans") as? [NSDictionary]
         
         for plan in allPlans! {
@@ -78,6 +82,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
             planesDieta.append(tempPlan)
         }
+        
+        // MARK: - Load location data
+        locationData = Location(pins: [MKMapPoint](), contacto: "Contactanos al numero 123-2456-879", horario: "Estaremos entrenando desde las 6:00pm hasta las 8:00pm")
+        
+        locationData.pins.append(MKMapPoint(x: 25.649449, y: -100.285751))
+        locationData.pins.append(MKMapPoint(x: 25.648930, y: -100.292687))
+        locationData.pins.append(MKMapPoint(x: 25.665507, y: -100.287732))
         
     }
     
@@ -126,6 +137,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             let index = dietTable.indexPathForSelectedRow?.row
             
             planVista.planData = planesDieta[index!]
+        }
+        else if segue.identifier == "segueToLocation" {
+            let locationVista = segue.destination as! LocalizationViewController
+            
+            locationVista.locationData = locationData
+            
         }
     }
 

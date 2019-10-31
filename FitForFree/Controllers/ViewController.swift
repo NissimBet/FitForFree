@@ -33,7 +33,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         loadData()
         setImageSettings()
         
-        print(StoreWorkoutDataInStorage.loadAllData())
 }
     
     func loadData() {

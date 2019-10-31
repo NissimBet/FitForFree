@@ -290,11 +290,22 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zaw-7f-GZT">
+                                <rect key="frame" x="214" y="561" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="kq5-xo-XEG"/>
                     </view>
-                    <navigationItem key="navigationItem" id="cVj-oV-JPX"/>
+                    <navigationItem key="navigationItem" id="cVj-oV-JPX">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="j2I-k2-tmQ">
+                            <connections>
+                                <segue destination="drc-Ya-wfX" kind="show" identifier="segueToWorkoutHistory" id="dl9-Bu-wgN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="imgChart" destination="fml-RS-ZJP" id="1It-ZB-TfG"/>
                         <outlet property="lbCongratx" destination="Sxa-1v-5Vn" id="RfZ-Dr-qJP"/>
@@ -303,6 +314,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ink-dm-aIO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4340" y="491.60419790104953"/>
+        </scene>
+        <!--Workout History View Controller-->
+        <scene sceneID="yp2-k9-r7c">
+            <objects>
+                <viewController id="drc-Ya-wfX" customClass="WorkoutHistoryViewController" customModule="FitForFree" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UkJ-4i-LGw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="kuD-NT-Ods"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="8n4-Af-mZy"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e9W-5k-w0e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5225" y="492"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="11B-hB-c4c">

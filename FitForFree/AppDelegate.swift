@@ -13,7 +13,7 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     lazy var persistentContainer : NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "SavedProgress")
+        let container = NSPersistentContainer(name: "StoredData")
         container.loadPersistentStores(completionHandler: { (storeDescriptor, error ) in
             if let error = error as NSError? {
                 print("Error initializig DB")

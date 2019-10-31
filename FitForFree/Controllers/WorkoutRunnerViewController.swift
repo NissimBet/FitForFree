@@ -92,6 +92,7 @@ class WorkoutRunnerViewController: UIViewController {
             reloadData(with: excerciseData)
         }
         else {
+            workoutDelegate.finishWorkout()
             performSegue(withIdentifier: "segueToWorkoutSuccess", sender: self)
         }
     }

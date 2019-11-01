@@ -19,7 +19,7 @@ class FinishedWorkoutViewController: UIViewController {
         super.viewDidLoad()
         
         imgChart.image = Utils.getImage()
-        lbCongratx.text = "Felicidades!! Hoy quemaste \(calories)!!"
+        lbCongratx.text = "Felicidades!! Hoy quemaste \(calories!)!!"
         
         navigationItem.hidesBackButton = true
         // Do any additional setup after loading the view.

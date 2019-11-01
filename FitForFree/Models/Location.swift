@@ -10,11 +10,11 @@ import UIKit
 import MapKit
 
 class Location: NSObject {
-    var pins : [MKMapPoint]!
+    var pins : [CLLocationCoordinate2D]!
     var contacto : String!
     var horario : String!
     
-    init(pins : [MKMapPoint], contacto : String, horario : String) {
+    init(pins : [CLLocationCoordinate2D], contacto : String, horario : String) {
         self.pins = pins
         self.contacto = contacto
         self.horario = horario

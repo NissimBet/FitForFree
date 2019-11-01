@@ -84,11 +84,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
         
         // MARK: - Load location data
-        locationData = Location(pins: [MKMapPoint](), contacto: "Contactanos al numero 123-2456-879", horario: "Estaremos entrenando desde las 6:00pm hasta las 8:00pm")
+        locationData = Location(pins: [CLLocationCoordinate2D](), contacto: "Contactanos al numero 123-2456-879", horario: "Estaremos entrenando desde las 6:00pm hasta las 8:00pm")
         
-        locationData.pins.append(MKMapPoint(x: 25.649449, y: -100.285751))
-        locationData.pins.append(MKMapPoint(x: 25.648930, y: -100.292687))
-        locationData.pins.append(MKMapPoint(x: 25.665507, y: -100.287732))
+        locationData.pins.append(CLLocationCoordinate2D(latitude: 25.649449, longitude: -100.285751))
+        locationData.pins.append(CLLocationCoordinate2D(latitude: 25.648930, longitude: -100.292687))
+        locationData.pins.append(CLLocationCoordinate2D(latitude: 25.665507, longitude: -100.287732))
         
     }
     

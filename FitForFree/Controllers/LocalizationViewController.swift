@@ -27,19 +27,26 @@ class LocalizationViewController: UIViewController, MKMapViewDelegate {
     }
     
     func setupMap() {
-        mapLocation.delegate = self
+        mapLocation.isZoomEnabled = true
         
-        // TODO: - Arreglar mapa
+        var annotations = [MKAnnotation]()
+        for pin in locationData.pins {
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = pin
+            annotation.title = "parque"
+            annotation.subtitle = ""
+            annotations.append(annotation)
+       }
+
         
-        let _ = MKCoordinateSpan(latitudeDelta: CLLocationDegrees(exactly: 0.1)!, longitudeDelta: CLLocationDegrees(exactly: 0.1)!)
+        let centerX = locationData.pins.reduce(0.0, { (accum: Double, data: CLLocationCoordinate2D) in accum + data.latitude }) / Double(locationData.pins.count)
+        let centerY = locationData.pins.reduce(0.0, { (accum: Double, data: CLLocationCoordinate2D) in accum + data.longitude }) / Double(locationData.pins.count)
         
-        let centerX = locationData.pins.reduce(0.0, { (accum: Double, data: MKMapPoint) in accum + data.x }) / Double(locationData.pins.count)
-        let centerY = locationData.pins.reduce(0.0, { (accum: Double, data: MKMapPoint) in accum + data.y }) / Double(locationData.pins.count)
+        let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+        let center = CLLocationCoordinate2D(latitude: centerX, longitude: centerY)
+        let region = MKCoordinateRegion(center: center, span: span)
         
-        let center = MKMapPoint(x: centerX, y: centerY)
-        
-        mapLocation.setRegion(MKCoordinateRegion(MKMapRect(origin: center, size: MKMapSize(width: 0.5, height: 0.5))), animated: true)
-        
+        mapLocation.setRegion(region, animated: true)
     }
 
     /*

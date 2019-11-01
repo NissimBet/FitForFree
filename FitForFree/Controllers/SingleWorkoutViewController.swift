@@ -42,6 +42,10 @@ class SingleWorkoutViewController: UIViewController, UITableViewDataSource, UITa
             
         return celda
     }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Los ejercicios de la rutina"
+    }
 
     // MARK: - Navigation
 

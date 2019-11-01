@@ -22,6 +22,7 @@ class WorkoutRunnerViewController: UIViewController {
     @IBOutlet weak var lbExcNAme: UILabel!
     @IBOutlet weak var lbExcDesc: UILabel!
     @IBOutlet weak var lbTimer: UILabel!
+    @IBOutlet weak var btnPause: UIButton!
     
     var workoutDelegate : StartedWorkoutState!
     var currentExc : Int = 0
@@ -104,8 +105,8 @@ class WorkoutRunnerViewController: UIViewController {
     }
     
     func pauseTimer() {
-
         if isTimerPaused {
+            btnPause.setTitle("Pausa", for: .normal)
             runTimer()
             isTimerPaused = false
         }
@@ -113,7 +114,8 @@ class WorkoutRunnerViewController: UIViewController {
             if timer != nil {
                 timer!.invalidate()
             }
-           isTimerPaused = true
+            isTimerPaused = true
+            btnPause.setTitle("Continuar", for: .normal)
         }
     }
     

@@ -93,7 +93,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func setImageSettings() {
-        mainImage.image = Utils.getImage(name: "mainPageImage")
+        mainImage.loadGif(asset: "workout1")
+        //mainImage.image = Utils.getImage(name: "workout1")
         mainImage.contentMode = .scaleAspectFit
     }
     

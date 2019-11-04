@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>762692913032-vjsga2quvhol57qb4s750r07e944q79h.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.762692913032-vjsga2quvhol57qb4s750r07e944q79h</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBR88jHWlldlD-nlycbfKvTZAF16Mm43rk</string>
+	<key>GCM_SENDER_ID</key>
+	<string>762692913032</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>Me.FitForFree</string>
+	<key>PROJECT_ID</key>
+	<string>fit-for-free-8c5b4</string>
+	<key>STORAGE_BUCKET</key>
+	<string>fit-for-free-8c5b4.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:762692913032:ios:0ee3cd0e09384332429c3d</string>
+	<key>DATABASE_URL</key>
+	<string>https://fit-for-free-8c5b4.firebaseio.com</string>
+</dict>
+</plist>

@@ -3,16 +3,21 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1BB3E7668C40CC32F13BFC19 /* Pods_FitForFree.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C8AEF93D3F843CD497B33D9 /* Pods_FitForFree.framework */; };
 		1D546EFB2352BABD005026D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D546EFA2352BABD005026D6 /* AppDelegate.swift */; };
 		1D546EFD2352BABD005026D6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D546EFC2352BABD005026D6 /* SceneDelegate.swift */; };
 		1D546F022352BABD005026D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D546F002352BABD005026D6 /* Main.storyboard */; };
 		1D546F042352BABE005026D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D546F032352BABE005026D6 /* Assets.xcassets */; };
 		1D546F072352BABE005026D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D546F052352BABE005026D6 /* LaunchScreen.storyboard */; };
 		1D546F152352BF7C005026D6 /* Exercises.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D546F142352BF7C005026D6 /* Exercises.plist */; };
+		C4D2B595236FA771006EEDE5 /* Swift+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D2B594236FA771006EEDE5 /* Swift+Gif.swift */; };
+		C4D2B597236FA792006EEDE5 /* workout1.gif in Resources */ = {isa = PBXBuildFile; fileRef = C4D2B596236FA792006EEDE5 /* workout1.gif */; };
+		C4D2B599236FAD62006EEDE5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C4D2B598236FAD62006EEDE5 /* GoogleService-Info.plist */; };
+		C4D2B59B236FC542006EEDE5 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D2B59A236FC542006EEDE5 /* HistoryViewController.swift */; };
 		FB2F86712363840000FF7AF3 /* WorkoutRunnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2F86702363840000FF7AF3 /* WorkoutRunnerViewController.swift */; };
 		FB2F86732363842400FF7AF3 /* WorkoutState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2F86722363842400FF7AF3 /* WorkoutState.swift */; };
 		FB9794D1236889B100415849 /* FinishedWorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9794D0236889B100415849 /* FinishedWorkoutViewController.swift */; };
@@ -43,6 +48,13 @@
 		1D546F062352BABE005026D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1D546F082352BABE005026D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D546F142352BF7C005026D6 /* Exercises.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Exercises.plist; sourceTree = "<group>"; };
+		203E50AFBCAC43FF11BE03B2 /* Pods-FitForFree.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitForFree.debug.xcconfig"; path = "Target Support Files/Pods-FitForFree/Pods-FitForFree.debug.xcconfig"; sourceTree = "<group>"; };
+		2C8AEF93D3F843CD497B33D9 /* Pods_FitForFree.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FitForFree.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4D2B594236FA771006EEDE5 /* Swift+Gif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Swift+Gif.swift"; sourceTree = "<group>"; };
+		C4D2B596236FA792006EEDE5 /* workout1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = workout1.gif; sourceTree = "<group>"; };
+		C4D2B598236FAD62006EEDE5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C4D2B59A236FC542006EEDE5 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HistoryViewController.swift; path = Controllers/HistoryViewController.swift; sourceTree = "<group>"; };
+		D17EF732CFEAC6F0956C1500 /* Pods-FitForFree.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitForFree.release.xcconfig"; path = "Target Support Files/Pods-FitForFree/Pods-FitForFree.release.xcconfig"; sourceTree = "<group>"; };
 		FB2F86702363840000FF7AF3 /* WorkoutRunnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutRunnerViewController.swift; sourceTree = "<group>"; };
 		FB2F86722363842400FF7AF3 /* WorkoutState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutState.swift; sourceTree = "<group>"; };
 		FB9794D0236889B100415849 /* FinishedWorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishedWorkoutViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BB3E7668C40CC32F13BFC19 /* Pods_FitForFree.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +93,8 @@
 			children = (
 				1D546EF92352BABD005026D6 /* FitForFree */,
 				1D546EF82352BABD005026D6 /* Products */,
+				F0E7E9BAE5D459B380CC1E34 /* Pods */,
+				4A24BA593E98DB310E2B9876 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,14 +114,35 @@
 				FBEC467C23634AEC009EA891 /* Controllers */,
 				FBEC4669236349BE009EA891 /* Models */,
 				1D546F142352BF7C005026D6 /* Exercises.plist */,
+				C4D2B598236FAD62006EEDE5 /* GoogleService-Info.plist */,
 				1D546EFA2352BABD005026D6 /* AppDelegate.swift */,
 				1D546EFC2352BABD005026D6 /* SceneDelegate.swift */,
 				1D546F002352BABD005026D6 /* Main.storyboard */,
+				C4D2B59A236FC542006EEDE5 /* HistoryViewController.swift */,
+				C4D2B594236FA771006EEDE5 /* Swift+Gif.swift */,
+				C4D2B596236FA792006EEDE5 /* workout1.gif */,
 				1D546F032352BABE005026D6 /* Assets.xcassets */,
 				1D546F052352BABE005026D6 /* LaunchScreen.storyboard */,
 				1D546F082352BABE005026D6 /* Info.plist */,
 			);
 			path = FitForFree;
+			sourceTree = "<group>";
+		};
+		4A24BA593E98DB310E2B9876 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2C8AEF93D3F843CD497B33D9 /* Pods_FitForFree.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F0E7E9BAE5D459B380CC1E34 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				203E50AFBCAC43FF11BE03B2 /* Pods-FitForFree.debug.xcconfig */,
+				D17EF732CFEAC6F0956C1500 /* Pods-FitForFree.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		FBB6B6B9236B2C1900F27C9B /* Data Storage */ = {
@@ -163,9 +199,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1D546F0B2352BABE005026D6 /* Build configuration list for PBXNativeTarget "FitForFree" */;
 			buildPhases = (
+				1E612C1BAF19D9944413EC84 /* [CP] Check Pods Manifest.lock */,
 				1D546EF32352BABD005026D6 /* Sources */,
 				1D546EF42352BABD005026D6 /* Frameworks */,
 				1D546EF52352BABD005026D6 /* Resources */,
+				BDCDA1947B378C05E94084DD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -216,13 +254,57 @@
 			files = (
 				FBFCDE2A236B47A100E4C5D5 /* StoredData.xcdatamodeld in Resources */,
 				1D546F152352BF7C005026D6 /* Exercises.plist in Resources */,
+				C4D2B597236FA792006EEDE5 /* workout1.gif in Resources */,
 				1D546F072352BABE005026D6 /* LaunchScreen.storyboard in Resources */,
 				1D546F042352BABE005026D6 /* Assets.xcassets in Resources */,
+				C4D2B599236FAD62006EEDE5 /* GoogleService-Info.plist in Resources */,
 				1D546F022352BABD005026D6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1E612C1BAF19D9944413EC84 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FitForFree-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BDCDA1947B378C05E94084DD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FitForFree/Pods-FitForFree-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FitForFree/Pods-FitForFree-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FitForFree/Pods-FitForFree-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1D546EF32352BABD005026D6 /* Sources */ = {
@@ -233,6 +315,8 @@
 				FBAA1E77235DF82D000833DD /* ExcerciseData.swift in Sources */,
 				FB9ACF93236B91FE0029D297 /* Location.swift in Sources */,
 				1D546EFB2352BABD005026D6 /* AppDelegate.swift in Sources */,
+				C4D2B595236FA771006EEDE5 /* Swift+Gif.swift in Sources */,
+				C4D2B59B236FC542006EEDE5 /* HistoryViewController.swift in Sources */,
 				FB2F86712363840000FF7AF3 /* WorkoutRunnerViewController.swift in Sources */,
 				FBC8358623636291009097B9 /* SingleWorkoutViewController.swift in Sources */,
 				FBAA1E75235DF7EC000833DD /* WorkoutData.swift in Sources */,
@@ -390,10 +474,12 @@
 		};
 		1D546F0C2352BABE005026D6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 203E50AFBCAC43FF11BE03B2 /* Pods-FitForFree.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FitForFree/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -407,10 +493,12 @@
 		};
 		1D546F0D2352BABE005026D6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D17EF732CFEAC6F0956C1500 /* Pods-FitForFree.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FitForFree/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class PlanAlimenticioViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -14,6 +15,10 @@ class PlanAlimenticioViewController: UIViewController, UITableViewDelegate, UITa
     @IBOutlet weak var lbDescription: UILabel!
     
     var planData : PlanAlimenticio!
+    var desayuno = [String]()
+    var des : String = ""
+    var alm : String = ""
+    var cen : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +27,28 @@ class PlanAlimenticioViewController: UIViewController, UITableViewDelegate, UITa
         alimentos.delegate = self
         
         lbDescription.text = planData.planDescription
+        let ref = Database.database().reference()
+        ref.child("Plans/desayuno/item1").observeSingleEvent(of: .value) { (snapshot) in
+            self.des = (snapshot.value as? String)!
+            
+            self.desayuno.append(self.des)
+            print(self.desayuno)
+            self.alimentos.reloadData()
+        }
+        ref.child("Plans/desayuno/item2").observeSingleEvent(of: .value) { (snapshot) in
+            self.alm = (snapshot.value as? String)!
+            
+            self.desayuno.append(self.alm)
+            print(self.desayuno)
+            self.alimentos.reloadData()
+        }
+        ref.child("Plans/desayuno/item3").observeSingleEvent(of: .value) { (snapshot) in
+            self.cen = (snapshot.value as? String)!
+            
+            self.desayuno.append(self.cen)
+            print(self.desayuno)
+            self.alimentos.reloadData()
+        }
     }
     
 
@@ -70,11 +97,11 @@ class PlanAlimenticioViewController: UIViewController, UITableViewDelegate, UITa
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
         case 0:
-            return "Desayuno"
+            return des
         case 1:
-            return "Almuerzo"
+            return alm
         case 2:
-            return "Cena"
+            return cen
         default:
             return ""
         }

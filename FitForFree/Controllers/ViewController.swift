@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import FirebaseDatabase
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -34,7 +35,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         loadData()
         setImageSettings()
-        
+        let ref = Database.database().reference()
+        ref.child("someid/name").observeSingleEvent(of: .value) { (snapshot) in
+            let name = snapshot.value as? String
+            print(name!)
+        }
+        		
 }
     
     func loadData() {

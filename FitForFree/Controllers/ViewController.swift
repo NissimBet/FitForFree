@@ -21,34 +21,83 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     var workouts: [WorkoutData]! = [WorkoutData]()
     var planesDieta: [PlanAlimenticio]! = [PlanAlimenticio]()
-    var locationData : Location!
+    var locationData : [Location]! = [Location]()
     
+    let dbRef = Database.database().reference()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
         dietTable.delegate = self
         dietTable.dataSource = self
         
         title = "Fit For Free"
         
-        loadData()
         setImageSettings()
-        let ref = Database.database().reference()
-        ref.child("someid/name").observeSingleEvent(of: .value) { (snapshot) in
-            let name = snapshot.value as? String
-            print(name!)
-        }
+        loadFirebaseWorkouts()
+        loadFirebaseMeals()
+        loadData()
+
         		
 }
+    
+    func loadFirebaseWorkouts() {
+        let _ = dbRef.child("workouts").observe(.value, with: { (snapshot) in
+            for workout in (snapshot.value as! [NSDictionary]) {
+                let name = workout.value(forKey: "name") as! String
+                let description = workout.value(forKey: "description") as! String
+                let excercises = workout.value(forKey: "exercises") as! [NSDictionary]
+                
+                var workEx = [ExcerciseData]()
+                
+                for anyEx in excercises {
+                    let exName = anyEx.value(forKey: "name") as! String
+                    let exDesc = anyEx.value(forKey: "description") as! String
+                    
+                    workEx.append(ExcerciseData(name: exName, description: exDesc))
+                }
+                
+                self.workouts.append(WorkoutData(name: name, description: description, excerciseList: workEx))
+            }
+        })
+    }
+    
+    func loadFirebaseMeals() {
+        let _ = dbRef.child("planes").observe(.value, with: { (snapshot) in
+            for mealPlan in (snapshot.value as! [NSDictionary]) {
+                let name = mealPlan.value(forKey: "name") as! String
+                let desc = mealPlan.value(forKey: "description") as! String
+                let tipo = mealPlan.value(forKey: "tipoCuerpo") as! String
+                let desayuno = mealPlan.value(forKey: "desayuno") as! [String]
+                let almuerzo = mealPlan.value(forKey: "almuerzo") as! [String]
+                let cena = mealPlan.value(forKey: "cena") as! [String]
+                
+                self.planesDieta.append(PlanAlimenticio(name: name, tipo: tipo, description: desc, desayuno: desayuno, almuerzo: almuerzo, cena: cena))
+            }
+            self.dietTable.reloadData()
+        })
+    }
+    
+    func loadFirebaseLocation() {
+        let _ = dbRef.child("localizacion").observe(.value, with: { (snapshot) in
+            for location in (snapshot.value as! [NSDictionary]) {
+                let horario = location.value(forKey: "horario") as! String
+                let latitud = location.value(forKey: "latitud") as! Float
+                let longitud = location.value(forKey: "longitud") as! Float
+                let nombre = location.value(forKey: "nombre") as! String
+                let contacto = location.value(forKey: "contacto") as! String
+                
+                self.locationData.append(Location(latitud: latitud, longitud: longitud, contacto: contacto, horario: horario, name: nombre))
+            }
+        })
+    }
     
     func loadData() {
         let path = Bundle.main.path(forResource: "Exercises", ofType: "plist")
         allData = NSDictionary(contentsOfFile: path!)
         
         // MARK: - Load Workout data
-        let allWorkouts = allData.object(forKey: "Workouts") as? [NSDictionary]
+        /*let allWorkouts = allData.object(forKey: "Workouts") as? [NSDictionary]
         
         for work in allWorkouts! {
             let excercises = work.value(forKey: "excerciseList") as! [NSDictionary]
@@ -70,10 +119,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             }
             tempWorkout.excerciseList = newExcercises
             workouts.append(tempWorkout)
-        }
+        }*/
         
         // MARK: - Load planes alimenticios
-        let allPlans = allData.object(forKey: "Plans") as? [NSDictionary]
+        /*let allPlans = allData.object(forKey: "Plans") as? [NSDictionary]
         
         for plan in allPlans! {
             let tempPlan = PlanAlimenticio(name: "", tipo: "", description: "", desayuno: [String](), almuerzo: [String](), cena: [String]())
@@ -87,14 +136,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             tempPlan.cena = (plan.value(forKey: "cena") as! [String])
             
             planesDieta.append(tempPlan)
-        }
+        }*/
         
         // MARK: - Load location data
-        locationData = Location(pins: [CLLocationCoordinate2D](), contacto: "Contactanos al numero 123-2456-879", horario: "Estaremos entrenando desde las 6:00pm hasta las 8:00pm")
+        /*locationData = Location(pins: [CLLocationCoordinate2D](), contacto: "Contactanos al numero 123-2456-879", horario: "Estaremos entrenando desde las 6:00pm hasta las 8:00pm")
         
         locationData.pins.append(CLLocationCoordinate2D(latitude: 25.649449, longitude: -100.285751))
         locationData.pins.append(CLLocationCoordinate2D(latitude: 25.648930, longitude: -100.292687))
-        locationData.pins.append(CLLocationCoordinate2D(latitude: 25.665507, longitude: -100.287732))
+        locationData.pins.append(CLLocationCoordinate2D(latitude: 25.665507, longitude: -100.287732))*/
         
     }
     

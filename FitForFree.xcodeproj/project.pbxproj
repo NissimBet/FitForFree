@@ -53,7 +53,7 @@
 		C4D2B594236FA771006EEDE5 /* Swift+Gif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Swift+Gif.swift"; sourceTree = "<group>"; };
 		C4D2B596236FA792006EEDE5 /* workout1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = workout1.gif; sourceTree = "<group>"; };
 		C4D2B598236FAD62006EEDE5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		C4D2B59A236FC542006EEDE5 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HistoryViewController.swift; path = Controllers/HistoryViewController.swift; sourceTree = "<group>"; };
+		C4D2B59A236FC542006EEDE5 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		D17EF732CFEAC6F0956C1500 /* Pods-FitForFree.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitForFree.release.xcconfig"; path = "Target Support Files/Pods-FitForFree/Pods-FitForFree.release.xcconfig"; sourceTree = "<group>"; };
 		FB2F86702363840000FF7AF3 /* WorkoutRunnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutRunnerViewController.swift; sourceTree = "<group>"; };
 		FB2F86722363842400FF7AF3 /* WorkoutState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutState.swift; sourceTree = "<group>"; };
@@ -118,7 +118,6 @@
 				1D546EFA2352BABD005026D6 /* AppDelegate.swift */,
 				1D546EFC2352BABD005026D6 /* SceneDelegate.swift */,
 				1D546F002352BABD005026D6 /* Main.storyboard */,
-				C4D2B59A236FC542006EEDE5 /* HistoryViewController.swift */,
 				C4D2B594236FA771006EEDE5 /* Swift+Gif.swift */,
 				C4D2B596236FA792006EEDE5 /* workout1.gif */,
 				1D546F032352BABE005026D6 /* Assets.xcassets */,
@@ -188,6 +187,7 @@
 				FBC8358523636291009097B9 /* SingleWorkoutViewController.swift */,
 				FB9794D0236889B100415849 /* FinishedWorkoutViewController.swift */,
 				FBC0730B236B3C4A00D87219 /* WorkoutHistoryViewController.swift */,
+				C4D2B59A236FC542006EEDE5 /* HistoryViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";

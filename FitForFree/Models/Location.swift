@@ -7,16 +7,19 @@
 //
 
 import UIKit
-import MapKit
 
 class Location: NSObject {
-    var pins : [CLLocationCoordinate2D]!
+    var latitud: Float!
+    var longitud: Float!
     var contacto : String!
     var horario : String!
+    var name: String!
     
-    init(pins : [CLLocationCoordinate2D], contacto : String, horario : String) {
-        self.pins = pins
+    init(latitud: Float, longitud: Float, contacto : String, horario : String, name: String) {
+        self.latitud = latitud
+        self.longitud = longitud
         self.contacto = contacto
         self.horario = horario
+        self.name = name
     }
 }

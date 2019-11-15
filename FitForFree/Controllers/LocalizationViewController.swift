@@ -15,18 +15,20 @@ class LocalizationViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var lbContacto: UILabel!
     @IBOutlet weak var lbHorario: UILabel!
     
-    var locationData : Location!
+    var locationData : [Location]! = [Location]()
     
+    // MARK: - ARREGLAR EL LOCATION CONTROLLER, CAMBIO DEL MODEL DE LOCATION
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        lbContacto.text = locationData.contacto
-        lbHorario.text = locationData.horario
+        //lbContacto.text = locationData.contacto
+        //lbHorario.text = locationData.horario
         
         setupMap()
     }
     
     func setupMap() {
+        /*
         mapLocation.isZoomEnabled = true
         
         var annotations = [MKAnnotation]()
@@ -47,6 +49,7 @@ class LocalizationViewController: UIViewController, MKMapViewDelegate {
         let region = MKCoordinateRegion(center: center, span: span)
         
         mapLocation.setRegion(region, animated: true)
+         */
     }
 
     /*

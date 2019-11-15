@@ -12,7 +12,7 @@ import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     lazy var persistentContainer : NSPersistentContainer = {
         let container = NSPersistentContainer(name: "StoredData")
         container.loadPersistentStores(completionHandler: { (storeDescriptor, error ) in

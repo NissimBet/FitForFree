@@ -16,7 +16,7 @@ class Location: NSObject {
     var horario : String!
     var name: String!
     
-    init(latitud: Float, longitud: Float, contacto : String, horario : String, name: String) {
+    init(latitud: Double, longitud: Double, contacto : String, horario : String, name: String) {
         self.latitud = CLLocationDegrees(exactly: latitud)!
         self.longitud = CLLocationDegrees(exactly: longitud)!
         self.contacto = contacto

@@ -34,6 +34,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         setImageSettings()
         loadFirebaseWorkouts()
         loadFirebaseMeals()
+        loadFirebaseLocation()
 }
     
     func loadFirebaseWorkouts() {
@@ -77,8 +78,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let _ = dbRef.child("localizacion").observe(.value, with: { (snapshot) in
             for location in (snapshot.value as! [NSDictionary]) {
                 let horario = location.value(forKey: "horario") as! String
-                let latitud = location.value(forKey: "latitud") as! Float
-                let longitud = location.value(forKey: "longitud") as! Float
+                let latitud = location.value(forKey: "latitud") as! Double
+                let longitud = location.value(forKey: "longitud") as! Double
                 let nombre = location.value(forKey: "nombre") as! String
                 let contacto = location.value(forKey: "contacto") as! String
                 
@@ -86,61 +87,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             }
         })
     }
-    
-    /*func loadData() {
-        let path = Bundle.main.path(forResource: "Exercises", ofType: "plist")
-        allData = NSDictionary(contentsOfFile: path!)
-        
-        // MARK: - Load Workout data
-        let allWorkouts = allData.object(forKey: "Workouts") as? [NSDictionary]
-        
-        for work in allWorkouts! {
-            let excercises = work.value(forKey: "excerciseList") as! [NSDictionary]
-            var newExcercises = [ExcerciseData]()
-            
-            let tempWorkout = WorkoutData(name: "", description: "", excerciseList: [ExcerciseData]())
-            
-            tempWorkout.name = (work.value(forKey: "name") as! String)
-            tempWorkout.workoutDescription = (work.value(forKey: "workoutDescription") as! String)
-            
-            for exc in excercises {
-                let tempExcercise = ExcerciseData(name: "", description: "")
-                
-                tempExcercise.name = (exc.value(forKey: "name") as! String)
-                tempExcercise.excerciseDescription = (exc.value(forKey: "excerciseDescription") as! String)
-                
-                newExcercises.append(tempExcercise)
-                
-            }
-            tempWorkout.excerciseList = newExcercises
-            workouts.append(tempWorkout)
-        }
-        
-        // MARK: - Load planes alimenticios
-        let allPlans = allData.object(forKey: "Plans") as? [NSDictionary]
-        
-        for plan in allPlans! {
-            let tempPlan = PlanAlimenticio(name: "", tipo: "", description: "", desayuno: [String](), almuerzo: [String](), cena: [String]())
-            
-            tempPlan.name = (plan.value(forKey: "name") as! String)
-            tempPlan.planDescription = (plan.value(forKey: "planDescription") as! String)
-            tempPlan.tipoCuerpo = (plan.value(forKey: "tipoCuerpo") as! String)
-            
-            tempPlan.desayuno = (plan.value(forKey: "desayuno") as! [String])
-            tempPlan.almuerzo = (plan.value(forKey: "almuerzo") as! [String])
-            tempPlan.cena = (plan.value(forKey: "cena") as! [String])
-            
-            planesDieta.append(tempPlan)
-        }
-        
-        // MARK: - Load location data
-        locationData = Location(pins: [CLLocationCoordinate2D](), contacto: "Contactanos al numero 123-2456-879", horario: "Estaremos entrenando desde las 6:00pm hasta las 8:00pm")
-        
-        locationData.pins.append(CLLocationCoordinate2D(latitude: 25.649449, longitude: -100.285751))
-        locationData.pins.append(CLLocationCoordinate2D(latitude: 25.648930, longitude: -100.292687))
-        locationData.pins.append(CLLocationCoordinate2D(latitude: 25.665507, longitude: -100.287732))
-        
-    }*/
     
     func setImageSettings() {
         mainImage.loadGif(asset: "workout1")

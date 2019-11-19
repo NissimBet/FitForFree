@@ -24,7 +24,7 @@ class LocalizationViewController: UIViewController, MKMapViewDelegate {
         //lbContacto.text = locationData.contacto
         //lbHorario.text = locationData.horario
         
-        //setupMap()
+        setupMap()
     }
     
     func setupMap() {
@@ -49,6 +49,7 @@ class LocalizationViewController: UIViewController, MKMapViewDelegate {
         let region = MKCoordinateRegion(center: center, span: span)
         
         mapLocation.setRegion(region, animated: true)
+        mapLocation.addAnnotations(annotations)
     }
 
     /*

@@ -16,9 +16,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var dietTable: UITableView!
     
     @IBOutlet weak var mainImage: UIImageView!
-    
-    var allData: NSDictionary!
-    
+        
     var workouts: [WorkoutData]! = [WorkoutData]()
     var planesDieta: [PlanAlimenticio]! = [PlanAlimenticio]()
     var locationData : [Location]! = [Location]()
@@ -36,9 +34,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         setImageSettings()
         loadFirebaseWorkouts()
         loadFirebaseMeals()
-        loadData()
-
-        		
 }
     
     func loadFirebaseWorkouts() {
@@ -92,12 +87,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         })
     }
     
-    func loadData() {
+    /*func loadData() {
         let path = Bundle.main.path(forResource: "Exercises", ofType: "plist")
         allData = NSDictionary(contentsOfFile: path!)
         
         // MARK: - Load Workout data
-        /*let allWorkouts = allData.object(forKey: "Workouts") as? [NSDictionary]
+        let allWorkouts = allData.object(forKey: "Workouts") as? [NSDictionary]
         
         for work in allWorkouts! {
             let excercises = work.value(forKey: "excerciseList") as! [NSDictionary]
@@ -119,10 +114,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             }
             tempWorkout.excerciseList = newExcercises
             workouts.append(tempWorkout)
-        }*/
+        }
         
         // MARK: - Load planes alimenticios
-        /*let allPlans = allData.object(forKey: "Plans") as? [NSDictionary]
+        let allPlans = allData.object(forKey: "Plans") as? [NSDictionary]
         
         for plan in allPlans! {
             let tempPlan = PlanAlimenticio(name: "", tipo: "", description: "", desayuno: [String](), almuerzo: [String](), cena: [String]())
@@ -136,16 +131,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             tempPlan.cena = (plan.value(forKey: "cena") as! [String])
             
             planesDieta.append(tempPlan)
-        }*/
+        }
         
         // MARK: - Load location data
-        /*locationData = Location(pins: [CLLocationCoordinate2D](), contacto: "Contactanos al numero 123-2456-879", horario: "Estaremos entrenando desde las 6:00pm hasta las 8:00pm")
+        locationData = Location(pins: [CLLocationCoordinate2D](), contacto: "Contactanos al numero 123-2456-879", horario: "Estaremos entrenando desde las 6:00pm hasta las 8:00pm")
         
         locationData.pins.append(CLLocationCoordinate2D(latitude: 25.649449, longitude: -100.285751))
         locationData.pins.append(CLLocationCoordinate2D(latitude: 25.648930, longitude: -100.292687))
-        locationData.pins.append(CLLocationCoordinate2D(latitude: 25.665507, longitude: -100.287732))*/
+        locationData.pins.append(CLLocationCoordinate2D(latitude: 25.665507, longitude: -100.287732))
         
-    }
+    }*/
     
     func setImageSettings() {
         mainImage.loadGif(asset: "workout1")

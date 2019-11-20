@@ -15,14 +15,23 @@ class LocalizationViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var lbContacto: UILabel!
     @IBOutlet weak var lbHorario: UILabel!
     
+    
     var locationData : [Location]! = [Location]()
     
-    // MARK: - ARREGLAR EL LOCATION CONTROLLER, CAMBIO DEL MODEL DE LOCATION
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //lbContacto.text = locationData.contacto
-        //lbHorario.text = locationData.horario
+        lbHorario.lineBreakMode = .byClipping
+        lbContacto.lineBreakMode = .byClipping
+        
+        lbHorario.text = locationData.reduce("Nos puedes encontrar en estos lugares:\n", { (accum, location) in
+            return accum! + "\(String(describing: location.name!)) a las horas \(String(describing: location.horario!))\n"
+
+        })
+        lbContacto.text = locationData.reduce("También nos puedes contactar con los siguientes números\n", { (accum, location) in
+            return accum! + "\(String(describing: location.contacto!))\n"
+            
+        })
         
         setupMap()
     }

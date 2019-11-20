@@ -237,9 +237,6 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="QyI-UT-O3u" firstAttribute="width" secondItem="6Ch-Ts-4cT" secondAttribute="width" multiplier="1.78571" id="poF-lN-zue"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -272,8 +269,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enfriamiento" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SF7-Ky-lM8">
-                                <rect key="frame" x="122.5" y="74" width="130.5" height="29"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Enfriamiento" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SF7-Ky-lM8">
+                                <rect key="frame" x="136" y="71" width="131" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -295,9 +292,6 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="R0j-Xe-gcV" firstAttribute="width" secondItem="pFK-4U-28a" secondAttribute="width" multiplier="2.85714" id="Cjj-I2-xJ0"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -305,7 +299,6 @@
                             <constraint firstItem="yDs-3L-v4A" firstAttribute="trailing" secondItem="sFB-0V-avT" secondAttribute="trailing" constant="50" id="7wK-7p-4eM"/>
                             <constraint firstItem="sFB-0V-avT" firstAttribute="centerX" secondItem="3gm-QZ-DpF" secondAttribute="centerX" id="EPs-nP-dIf"/>
                             <constraint firstItem="yDs-3L-v4A" firstAttribute="bottom" secondItem="sFB-0V-avT" secondAttribute="bottom" constant="100" id="KaJ-9d-iYt"/>
-                            <constraint firstItem="SF7-Ky-lM8" firstAttribute="centerX" secondItem="3gm-QZ-DpF" secondAttribute="centerX" id="NF1-hk-gb1"/>
                             <constraint firstItem="sFB-0V-avT" firstAttribute="leading" secondItem="yDs-3L-v4A" secondAttribute="leading" constant="50" id="gym-9J-zBo"/>
                             <constraint firstItem="SF7-Ky-lM8" firstAttribute="top" secondItem="yDs-3L-v4A" secondAttribute="top" constant="30" id="qqc-I5-HrH"/>
                         </constraints>
@@ -325,6 +318,7 @@
         <!--Localization View Controller-->
         <scene sceneID="e5D-9u-u0c">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DAe-m1-njA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="uiy-mV-9eU" customClass="LocalizationViewController" customModule="FitForFree" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cRz-j6-mku">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -339,13 +333,13 @@
                                     <outlet property="delegate" destination="cRz-j6-mku" id="faL-ec-dyH"/>
                                 </connections>
                             </mapView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QV8-og-MhM">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="30" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QV8-og-MhM">
                                 <rect key="frame" x="20" y="434" width="335" height="100"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uTa-qY-QZp">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="30" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uTa-qY-QZp">
                                 <rect key="frame" x="20" y="314" width="335" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="dy8-3c-LFf"/>
@@ -373,11 +367,10 @@
                     <navigationItem key="navigationItem" id="6LB-Nu-QZi"/>
                     <connections>
                         <outlet property="lbContacto" destination="uTa-qY-QZp" id="bPG-Uh-x7k"/>
-                        <outlet property="lbHorario" destination="QV8-og-MhM" id="bAC-xa-w5c"/>
+                        <outlet property="lbHorario" destination="QV8-og-MhM" id="25T-vg-5y9"/>
                         <outlet property="mapLocation" destination="se1-Y5-bwe" id="1fm-dr-2gl"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DAe-m1-njA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1584.8" y="1591.7541229385308"/>
         </scene>

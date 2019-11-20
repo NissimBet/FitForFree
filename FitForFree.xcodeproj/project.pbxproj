@@ -22,6 +22,8 @@
 		FB2F86732363842400FF7AF3 /* WorkoutState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2F86722363842400FF7AF3 /* WorkoutState.swift */; };
 		FB9794D1236889B100415849 /* FinishedWorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9794D0236889B100415849 /* FinishedWorkoutViewController.swift */; };
 		FB9794D32368993F00415849 /* StoreWorkoutDataInStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9794D22368993F00415849 /* StoreWorkoutDataInStorage.swift */; };
+		FB97C45F2385937900045068 /* WarmupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB97C45E2385937900045068 /* WarmupViewController.swift */; };
+		FB97C46523859BAD00045068 /* CooldownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB97C46423859BAD00045068 /* CooldownViewController.swift */; };
 		FB9ACF91236B91AB0029D297 /* LocalizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9ACF90236B91AB0029D297 /* LocalizationViewController.swift */; };
 		FB9ACF93236B91FE0029D297 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9ACF92236B91FE0029D297 /* Location.swift */; };
 		FBAA1E75235DF7EC000833DD /* WorkoutData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAA1E74235DF7EC000833DD /* WorkoutData.swift */; };
@@ -59,6 +61,8 @@
 		FB2F86722363842400FF7AF3 /* WorkoutState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutState.swift; sourceTree = "<group>"; };
 		FB9794D0236889B100415849 /* FinishedWorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishedWorkoutViewController.swift; sourceTree = "<group>"; };
 		FB9794D22368993F00415849 /* StoreWorkoutDataInStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreWorkoutDataInStorage.swift; sourceTree = "<group>"; };
+		FB97C45E2385937900045068 /* WarmupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarmupViewController.swift; sourceTree = "<group>"; };
+		FB97C46423859BAD00045068 /* CooldownViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CooldownViewController.swift; sourceTree = "<group>"; };
 		FB9ACF90236B91AB0029D297 /* LocalizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationViewController.swift; sourceTree = "<group>"; };
 		FB9ACF92236B91FE0029D297 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		FBAA1E74235DF7EC000833DD /* WorkoutData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutData.swift; sourceTree = "<group>"; };
@@ -178,6 +182,7 @@
 		FBEC467C23634AEC009EA891 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FB97C46423859BAD00045068 /* CooldownViewController.swift */,
 				FB9ACF90236B91AB0029D297 /* LocalizationViewController.swift */,
 				FBFCDE2D236B5F9000E4C5D5 /* PlanAlimenticioViewController.swift */,
 				FB2F86702363840000FF7AF3 /* WorkoutRunnerViewController.swift */,
@@ -185,6 +190,7 @@
 				FBEC467723634ABF009EA891 /* ViewController.swift */,
 				FBEC467F23634B97009EA891 /* AllWorkoutsTableViewController.swift */,
 				FBC8358523636291009097B9 /* SingleWorkoutViewController.swift */,
+				FB97C45E2385937900045068 /* WarmupViewController.swift */,
 				FB9794D0236889B100415849 /* FinishedWorkoutViewController.swift */,
 				FBC0730B236B3C4A00D87219 /* WorkoutHistoryViewController.swift */,
 				C4D2B59A236FC542006EEDE5 /* HistoryViewController.swift */,
@@ -322,12 +328,14 @@
 				FBAA1E75235DF7EC000833DD /* WorkoutData.swift in Sources */,
 				FB2F86732363842400FF7AF3 /* WorkoutState.swift in Sources */,
 				FB9794D1236889B100415849 /* FinishedWorkoutViewController.swift in Sources */,
+				FB97C46523859BAD00045068 /* CooldownViewController.swift in Sources */,
 				FBC8358823637A7F009097B9 /* ExcerciseViewController.swift in Sources */,
 				FBEC467A23634ABF009EA891 /* ViewController.swift in Sources */,
 				FBC0730A236B394600D87219 /* SavedWorkout+CoreDataProperties.swift in Sources */,
 				1D546EFD2352BABD005026D6 /* SceneDelegate.swift in Sources */,
 				FBC0730F236B3E6500D87219 /* Utils.swift in Sources */,
 				FB9794D32368993F00415849 /* StoreWorkoutDataInStorage.swift in Sources */,
+				FB97C45F2385937900045068 /* WarmupViewController.swift in Sources */,
 				FBFCDE2C236B59FE00E4C5D5 /* PlanAlimenticio.swift in Sources */,
 				FBEC468023634B97009EA891 /* AllWorkoutsTableViewController.swift in Sources */,
 				FBC0730C236B3C4A00D87219 /* WorkoutHistoryViewController.swift in Sources */,

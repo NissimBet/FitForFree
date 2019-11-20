@@ -60,40 +60,39 @@ class SingleWorkoutViewController: UIViewController, UITableViewDataSource, UITa
             
         }
         else if segue.identifier == "segueRunWorkout" {
-            let workoutRunner = segue.destination as! WorkoutRunnerViewController
+            let warmupView = segue.destination as! WarmupViewController
             
-            workoutRunner.workoutDelegate = self
-            workoutRunner.excerciseData = workoutData.excerciseList[0]
-            workoutRunner.excTime = 5
+            warmupView.workoutDelegate = self
+            warmupView.excerciseData = workoutData.excerciseList[0]
             
-            switch workoutState.currentState {
-            case .NOT_STARTED:
-                workoutRunner.currentExc = 0
-                workoutState.numExcercise = 0
-                workoutState.currentState = .WARMUP
-                break
-            case .WARMUP:
-                workoutState.currentState = .EXCERCISE
-                break
-            case .COOLDOWN:
-                workoutState.currentState = .FINISHED
-                break
-            default:
-                break
-            }
+            workoutState.numExcercise = 0
+            workoutState.currentState = .WARMUP
+            
+            warmupView.workoutState = workoutState
         }
     }
     
     // MARK: - Workout State functions
-    func finishedExcercise(excercise number: Int) -> Void {
-        workoutState.numExcercise = number + 1
-   }
+    func finishedExcercise(excercise number: Int) -> WorkoutState {
+        if workoutState.currentState == AppState.WARMUP {
+            workoutState.currentState = .EXCERCISE
+            workoutState.numExcercise = 0
+        }
+        else if (workoutState.currentState == AppState.EXCERCISE) && (number >= workoutData.excerciseList.count) {
+            workoutState.currentState = .COOLDOWN
+            workoutState.numExcercise = number
+        }
+        else {
+            workoutState.numExcercise = number + 1
+        }
+        return workoutState
+    }
        
     func getNextExcerciseData() -> ExcerciseData {
         let nextExcercise : ExcerciseData = workoutData.excerciseList[workoutState.numExcercise]
         
         return nextExcercise
-       }
+    }
     
     func isThisLastExcercise(num: Int) -> Bool {
         return num == workoutData.excerciseList.count

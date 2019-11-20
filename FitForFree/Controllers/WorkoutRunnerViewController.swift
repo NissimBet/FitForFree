@@ -9,7 +9,7 @@
 import UIKit
 
 protocol StartedWorkoutState {
-    func finishedExcercise(excercise number: Int) -> Void
+    func finishedExcercise(excercise number: Int) -> WorkoutState
     func getNextExcerciseData() -> ExcerciseData
     func isThisLastExcercise(num: Int) -> Bool
     func resetWorkoutProgress() -> Void
@@ -25,6 +25,7 @@ class WorkoutRunnerViewController: UIViewController {
     @IBOutlet weak var btnPause: UIButton!
     
     var workoutDelegate : StartedWorkoutState!
+    var workoutState : WorkoutState!
     var currentExc : Int = 0
     var excerciseData : ExcerciseData!
     var timer : Timer? = nil
@@ -61,7 +62,7 @@ class WorkoutRunnerViewController: UIViewController {
         
         let okAction = UIAlertAction(title: "Ok", style: .default, handler: { (UIAlertAction) in
             self.workoutDelegate.resetWorkoutProgress()
-            self.navigationController?.popViewController(animated: true)
+            self.navigationController?.popToViewController((self.navigationController?.viewControllers[(self.navigationController?.viewControllers.count)! - 3])!, animated: true)
         })
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
@@ -83,7 +84,7 @@ class WorkoutRunnerViewController: UIViewController {
     }
     
     func finishExcercise() {
-        workoutDelegate.finishedExcercise(excercise: currentExc)
+        workoutState = workoutDelegate.finishedExcercise(excercise: currentExc)
         currentExc += 1
         isLast = workoutDelegate.isThisLastExcercise(num: currentExc)
         
@@ -94,7 +95,7 @@ class WorkoutRunnerViewController: UIViewController {
         }
         else {
             workoutDelegate.finishWorkout()
-            performSegue(withIdentifier: "segueToWorkoutSuccess", sender: self)
+            performSegue(withIdentifier: "segueToCooldown", sender: self)
         }
     }
     
@@ -146,13 +147,10 @@ class WorkoutRunnerViewController: UIViewController {
     }
     
     // MARK: - Navigation
-
+/*
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "segueToWorkoutSuccess" {
-            let vista = segue.destination as! FinishedWorkoutViewController
-            vista.calories = 320
-        }
+        
     }
-    
+*/
 }

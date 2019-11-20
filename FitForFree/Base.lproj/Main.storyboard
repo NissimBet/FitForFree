@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="u5o-PN-SAy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="u5o-PN-SAy">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -106,6 +106,10 @@
                                             <segue destination="0UO-gX-uWX" kind="show" identifier="workoutSegue" id="qM9-lE-kCG"/>
                                         </connections>
                                     </button>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="qET-d0-9nl">
+                                        <rect key="frame" x="169" y="112" width="37" height="37"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </activityIndicatorView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="Sxu-gt-QI6" firstAttribute="trailing" secondItem="A92-WN-7Xa" secondAttribute="trailing" constant="209" id="28n-yH-PPu"/>
@@ -145,6 +149,7 @@
                     <connections>
                         <outlet property="dietTable" destination="mSS-hE-frb" id="hN8-Xd-NZ1"/>
                         <outlet property="mainImage" destination="sk2-LI-ut6" id="7Eh-Uv-jMP"/>
+                        <outlet property="spinner" destination="qET-d0-9nl" id="qU3-oR-cLn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -238,15 +243,30 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gE3-z7-Ff3">
+                                <rect key="frame" x="20" y="149" width="335" height="238"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="238" id="Sxp-SB-BWx"/>
+                                </constraints>
+                            </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="zV2-xy-SlQ">
+                                <rect key="frame" x="167" y="258" width="40" height="20"/>
+                                <color key="color" systemColor="linkColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="evI-rt-Of4" firstAttribute="leading" secondItem="nDT-xG-rP8" secondAttribute="leading" constant="50" id="31g-rx-qSA"/>
                             <constraint firstItem="Zev-3J-wmW" firstAttribute="top" secondItem="nDT-xG-rP8" secondAttribute="top" constant="30" id="KFY-DV-rUd"/>
                             <constraint firstItem="nDT-xG-rP8" firstAttribute="trailing" secondItem="evI-rt-Of4" secondAttribute="trailing" constant="50" id="Lgq-WS-VQP"/>
+                            <constraint firstItem="gE3-z7-Ff3" firstAttribute="centerY" secondItem="zV2-xy-SlQ" secondAttribute="centerY" id="U1s-OU-BQV"/>
+                            <constraint firstItem="gE3-z7-Ff3" firstAttribute="centerX" secondItem="zV2-xy-SlQ" secondAttribute="centerX" id="eae-aB-Fky"/>
+                            <constraint firstItem="gE3-z7-Ff3" firstAttribute="top" secondItem="Zev-3J-wmW" secondAttribute="bottom" constant="46" id="feQ-Cm-gBS"/>
                             <constraint firstItem="evI-rt-Of4" firstAttribute="centerX" secondItem="JeT-hL-7yi" secondAttribute="centerX" id="gT8-yx-etj"/>
                             <constraint firstItem="Zev-3J-wmW" firstAttribute="centerX" secondItem="JeT-hL-7yi" secondAttribute="centerX" id="svh-O9-jzU"/>
+                            <constraint firstItem="gE3-z7-Ff3" firstAttribute="leading" secondItem="nDT-xG-rP8" secondAttribute="leading" constant="20" id="tYE-T7-r1X"/>
                             <constraint firstItem="nDT-xG-rP8" firstAttribute="bottom" secondItem="evI-rt-Of4" secondAttribute="bottom" constant="100" id="uct-2w-VKo"/>
+                            <constraint firstItem="gE3-z7-Ff3" firstAttribute="centerX" secondItem="Zev-3J-wmW" secondAttribute="centerX" id="yzA-ly-9rw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nDT-xG-rP8"/>
                     </view>
@@ -254,12 +274,14 @@
                     <connections>
                         <outlet property="btnPause" destination="QyI-UT-O3u" id="p0A-lY-9vf"/>
                         <outlet property="lbTimer" destination="6Ch-Ts-4cT" id="lGt-Vc-9tb"/>
+                        <outlet property="spinner" destination="zV2-xy-SlQ" id="BKR-yX-dlQ"/>
+                        <outlet property="warmUpGif" destination="gE3-z7-Ff3" id="78V-ca-nOK"/>
                         <segue destination="TYx-S1-4Ti" kind="show" identifier="segueContinueToWorkout" id="8pf-RA-fQl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7kd-HT-EKY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2790" y="1343"/>
+            <point key="canvasLocation" x="2789.5999999999999" y="1342.5787106446778"/>
         </scene>
         <!--Cooldown View Controller-->
         <scene sceneID="bya-sT-P59">
@@ -293,32 +315,47 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cue-NJ-8qa">
+                                <rect key="frame" x="16" y="141" width="343" height="260"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="260" id="YMY-mG-IkB"/>
+                                </constraints>
+                            </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="w2d-IM-t9F">
+                                <rect key="frame" x="181" y="261" width="40" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" systemColor="linkColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="yDs-3L-v4A" firstAttribute="trailing" secondItem="sFB-0V-avT" secondAttribute="trailing" constant="50" id="7wK-7p-4eM"/>
+                            <constraint firstItem="cue-NJ-8qa" firstAttribute="leading" secondItem="3gm-QZ-DpF" secondAttribute="leadingMargin" id="ANg-qu-Vea"/>
                             <constraint firstItem="sFB-0V-avT" firstAttribute="centerX" secondItem="3gm-QZ-DpF" secondAttribute="centerX" id="EPs-nP-dIf"/>
                             <constraint firstItem="yDs-3L-v4A" firstAttribute="bottom" secondItem="sFB-0V-avT" secondAttribute="bottom" constant="100" id="KaJ-9d-iYt"/>
                             <constraint firstItem="sFB-0V-avT" firstAttribute="leading" secondItem="yDs-3L-v4A" secondAttribute="leading" constant="50" id="gym-9J-zBo"/>
                             <constraint firstItem="SF7-Ky-lM8" firstAttribute="top" secondItem="yDs-3L-v4A" secondAttribute="top" constant="30" id="qqc-I5-HrH"/>
+                            <constraint firstItem="cue-NJ-8qa" firstAttribute="centerX" secondItem="sFB-0V-avT" secondAttribute="centerX" id="sqz-U0-5bG"/>
+                            <constraint firstItem="cue-NJ-8qa" firstAttribute="top" secondItem="SF7-Ky-lM8" secondAttribute="bottom" constant="41" id="xot-e1-PjY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yDs-3L-v4A"/>
                     </view>
                     <navigationItem key="navigationItem" id="4PC-nF-Brc"/>
                     <connections>
                         <outlet property="btnPause" destination="R0j-Xe-gcV" id="hhs-2J-zf8"/>
+                        <outlet property="coolDownImage" destination="cue-NJ-8qa" id="dPD-dw-zcu"/>
                         <outlet property="lbTimer" destination="pFK-4U-28a" id="4U0-lw-nYZ"/>
+                        <outlet property="spinner" destination="w2d-IM-t9F" id="L3T-Pj-rUz"/>
                         <segue destination="YKL-oI-I7Y" kind="show" identifier="segueToSuccess" id="fP7-oK-GgT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3pu-Ko-Clg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3858" y="1343"/>
+            <point key="canvasLocation" x="3856.8000000000002" y="1342.5787106446778"/>
         </scene>
         <!--Localization View Controller-->
         <scene sceneID="e5D-9u-u0c">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DAe-m1-njA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="uiy-mV-9eU" customClass="LocalizationViewController" customModule="FitForFree" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cRz-j6-mku">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -371,6 +408,7 @@
                         <outlet property="mapLocation" destination="se1-Y5-bwe" id="1fm-dr-2gl"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DAe-m1-njA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1584.8" y="1591.7541229385308"/>
         </scene>

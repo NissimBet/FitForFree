@@ -14,12 +14,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     
     @IBOutlet weak var dietTable: UITableView!
-    
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var mainImage: UIImageView!
         
     var workouts: [WorkoutData]! = [WorkoutData]()
     var planesDieta: [PlanAlimenticio]! = [PlanAlimenticio]()
     var locationData : [Location]! = [Location]()
+    let imageUrl2 = URL(string: "https://media0.giphy.com/media/iQK5zCZL4mBuU/giphy.gif?cid=790b761105ae5cfbe8e70adcd2dd63c002726c3fbffe119a&rid=giphy.gif")!
     
     let dbRef = Database.database().reference()
     
@@ -49,8 +50,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 for anyEx in excercises {
                     let exName = anyEx.value(forKey: "name") as! String
                     let exDesc = anyEx.value(forKey: "description") as! String
+                    let exUrl = anyEx.value(forKey: "videoURL") as! String
                     
-                    workEx.append(ExcerciseData(name: exName, description: exDesc))
+                    workEx.append(ExcerciseData(name: exName, description: exDesc, videoURL: exUrl))
                 }
                 
                 self.workouts.append(WorkoutData(name: name, description: description, excerciseList: workEx))
@@ -89,7 +91,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func setImageSettings() {
-        mainImage.loadGif(asset: "workout1")
+        mainImage.image = Utils.getImage(name: "FitForFree")
+        spinner.isHidden = true
+        //downloadImage(with: imageUrl2)
         //mainImage.image = Utils.getImage(name: "workout1")
         mainImage.contentMode = .scaleAspectFit
     }
@@ -142,6 +146,31 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
         }
     }
+    
+    func downloadImage(with url: URL) {
+        spinner(shouldSpin: true)
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if error != nil {
+                print(error!)
+                return
+            }
+            DispatchQueue.main.async {
+                self.mainImage.image = UIImage.gif(data: data!)
+                self.spinner(shouldSpin: false)
+            }
+        }.resume()
+    }
+    
+    func spinner(shouldSpin status: Bool){
+        if status == true {
+            spinner.isHidden = false
+            spinner.startAnimating()
+        } else {
+            spinner.isHidden = true
+            spinner.stopAnimating()
+        }
+    }
+
 
 
 }

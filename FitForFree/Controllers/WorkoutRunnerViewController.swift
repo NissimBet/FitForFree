@@ -73,9 +73,10 @@ class WorkoutRunnerViewController: UIViewController {
     }
     
     func reloadData(with nextData : ExcerciseData) {
-        imgExcIMage.image = Utils.getImage()
+        //imgExcIMage.image = Utils.getImage()
         lbExcDesc.text = excerciseData.excerciseDescription
         lbExcNAme.text = excerciseData.name
+        downloadImage(with: URL(string: excerciseData.videoURL)!)
         
         currentTime = excTime
         resetTimer()
@@ -146,6 +147,17 @@ class WorkoutRunnerViewController: UIViewController {
         pauseTimer()
     }
     
+    func downloadImage(with url: URL) {
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if error != nil {
+                print(error!)
+                return
+            }
+            DispatchQueue.main.async {
+                self.imgExcIMage.image = UIImage.gif(data: data!)
+            }
+        }.resume()
+    }
     // MARK: - Navigation
 /*
     // In a storyboard-based application, you will often want to do a little preparation before navigation

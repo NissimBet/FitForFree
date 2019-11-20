@@ -18,14 +18,25 @@ class ExcerciseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         title = excerciseData.name
         lbExcName.text = excerciseData.name
-        imgExc.image = Utils.getImage(name: excerciseData.videoURL)
         lbExcDescription.text = excerciseData.excerciseDescription
+        let Gif = URL(string: excerciseData.videoURL)
+        downloadImage(with: Gif!)
     }
     
-
+    
+    func downloadImage(with url: URL) {
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if error != nil {
+                print(error!)
+                return
+            }
+            DispatchQueue.main.async {
+                self.imgExc.image = UIImage.gif(data: data!)
+            }
+        }.resume()
+    }
     /*
     // MARK: - Navigation
 

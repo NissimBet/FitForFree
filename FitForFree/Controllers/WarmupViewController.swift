@@ -12,6 +12,8 @@ class WarmupViewController: UIViewController {
 
     @IBOutlet weak var btnPause: UIButton!
     @IBOutlet weak var lbTimer: UILabel!
+    @IBOutlet weak var warmUpGif: UIImageView!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     var workoutDelegate : StartedWorkoutState!
     var workoutState : WorkoutState!
@@ -21,6 +23,7 @@ class WarmupViewController: UIViewController {
     var currentTime : Int = 0
     var isTimerRunning : Bool = false
     var excerciseData : ExcerciseData!
+    var gifWarmUp = URL(string: "https://media2.giphy.com/media/kHa1N17eGv1tWMBQqA/giphy.gif?cid=790b7611db5ce079d1675719df6a627564819b9aee931fd4&rid=giphy.gif")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +35,7 @@ class WarmupViewController: UIViewController {
         if !isTimerRunning {
             runTimer()
         }
+        downloadImage(with: gifWarmUp!)
         
     }
     
@@ -116,6 +120,30 @@ class WarmupViewController: UIViewController {
             workoutState.currentState = .EXCERCISE
             
             workoutRunner.workoutState = workoutState
+        }
+    }
+    
+    func downloadImage(with url: URL) {
+        spinner(shouldSpin: true)
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if error != nil {
+                print(error!)
+                return
+            }
+            DispatchQueue.main.async {
+                self.warmUpGif.image = UIImage.gif(data: data!)
+                self.spinner(shouldSpin: false)
+            }
+        }.resume()
+    }
+    
+    func spinner(shouldSpin status: Bool){
+        if status == true {
+            spinner.isHidden = false
+            spinner.startAnimating()
+        } else {
+            spinner.isHidden = true
+            spinner.stopAnimating()
         }
     }
 

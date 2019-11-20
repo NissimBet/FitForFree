@@ -12,6 +12,8 @@ class CooldownViewController: UIViewController {
 
     @IBOutlet weak var btnPause: UIButton!
     @IBOutlet weak var lbTimer: UILabel!
+    @IBOutlet weak var coolDownImage: UIImageView!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     var timer : Timer? = nil
     var isTimerPaused : Bool! = false
@@ -19,11 +21,13 @@ class CooldownViewController: UIViewController {
     var currentTime : Int = 0
     var isTimerRunning : Bool = false
     
+    var coolDownGifUrl = URL(string: "https://media1.giphy.com/media/xUPGcxoBFqr2CJy5sA/giphy.gif?cid=790b76118ea3730fa92af721333ae1167c2f96d8176b855a&rid=giphy.gif")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         navigationItem.hidesBackButton = true
-        
+        downloadImage(with: coolDownGifUrl!)
         reloadData()
         
         if !isTimerRunning {
@@ -105,5 +109,28 @@ class CooldownViewController: UIViewController {
         }
     }
     
+    func downloadImage(with url: URL) {
+        spinner(shouldSpin: true)
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if error != nil {
+                print(error!)
+                return
+            }
+            DispatchQueue.main.async {
+                self.coolDownImage.image = UIImage.gif(data: data!)
+                self.spinner(shouldSpin: false)
+            }
+        }.resume()
+    }
+    
+    func spinner(shouldSpin status: Bool){
+        if status == true {
+            spinner.isHidden = false
+            spinner.startAnimating()
+        } else {
+            spinner.isHidden = true
+            spinner.stopAnimating()
+        }
+    }
 
 }

@@ -3,11 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		1BB3E7668C40CC32F13BFC19 /* Pods_FitForFree.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C8AEF93D3F843CD497B33D9 /* Pods_FitForFree.framework */; };
+		1D02D918238617BB00FB28D5 /* calendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D02D917238617BB00FB28D5 /* calendarViewController.swift */; };
+		1D02D93023862C3000FB28D5 /* dateCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D02D92F23862C3000FB28D5 /* dateCellCollectionViewCell.swift */; };
 		1D546EFB2352BABD005026D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D546EFA2352BABD005026D6 /* AppDelegate.swift */; };
 		1D546EFD2352BABD005026D6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D546EFC2352BABD005026D6 /* SceneDelegate.swift */; };
 		1D546F022352BABD005026D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D546F002352BABD005026D6 /* Main.storyboard */; };
@@ -41,7 +43,34 @@
 		FBFCDE2E236B5F9000E4C5D5 /* PlanAlimenticioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBFCDE2D236B5F9000E4C5D5 /* PlanAlimenticioViewController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		1D02D9222386217600FB28D5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1D02D91C2386217600FB28D5 /* CalendarView.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BEFD654F1ACC072000ADE917;
+			remoteInfo = CalendarView;
+		};
+		1D02D9242386217600FB28D5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1D02D91C2386217600FB28D5 /* CalendarView.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BEFD65641ACC072000ADE917;
+			remoteInfo = CalendarViewTests;
+		};
+		1D02D9262386217600FB28D5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1D02D91C2386217600FB28D5 /* CalendarView.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = ADC21D7B208C5DE400200022;
+			remoteInfo = CalendarView_iOS;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		1D02D917238617BB00FB28D5 /* calendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calendarViewController.swift; sourceTree = "<group>"; };
+		1D02D91C2386217600FB28D5 /* CalendarView.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CalendarView.xcodeproj; path = CalendarView/CalendarView.xcodeproj; sourceTree = "<group>"; };
+		1D02D92F23862C3000FB28D5 /* dateCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dateCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		1D546EF72352BABD005026D6 /* FitForFree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitForFree.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D546EFA2352BABD005026D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D546EFC2352BABD005026D6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +121,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D02D91D2386217600FB28D5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D02D9232386217600FB28D5 /* CalendarView.app */,
+				1D02D9252386217600FB28D5 /* CalendarViewTests.xctest */,
+				1D02D9272386217600FB28D5 /* CalendarView_iOS.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		1D546EEE2352BABD005026D6 = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +173,7 @@
 		4A24BA593E98DB310E2B9876 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1D02D91C2386217600FB28D5 /* CalendarView.xcodeproj */,
 				2C8AEF93D3F843CD497B33D9 /* Pods_FitForFree.framework */,
 			);
 			name = Frameworks;
@@ -189,9 +229,11 @@
 				FBC8358723637A7F009097B9 /* ExcerciseViewController.swift */,
 				FBEC467723634ABF009EA891 /* ViewController.swift */,
 				FBEC467F23634B97009EA891 /* AllWorkoutsTableViewController.swift */,
+				1D02D917238617BB00FB28D5 /* calendarViewController.swift */,
 				FBC8358523636291009097B9 /* SingleWorkoutViewController.swift */,
 				FB97C45E2385937900045068 /* WarmupViewController.swift */,
 				FB9794D0236889B100415849 /* FinishedWorkoutViewController.swift */,
+				1D02D92F23862C3000FB28D5 /* dateCellCollectionViewCell.swift */,
 				FBC0730B236B3C4A00D87219 /* WorkoutHistoryViewController.swift */,
 				C4D2B59A236FC542006EEDE5 /* HistoryViewController.swift */,
 			);
@@ -216,6 +258,8 @@
 			dependencies = (
 			);
 			name = FitForFree;
+			packageProductDependencies = (
+			);
 			productName = FitForFree;
 			productReference = 1D546EF72352BABD005026D6 /* FitForFree.app */;
 			productType = "com.apple.product-type.application";
@@ -244,14 +288,47 @@
 				Base,
 			);
 			mainGroup = 1D546EEE2352BABD005026D6;
+			packageReferences = (
+				1D02D92C2386222F00FB28D5 /* XCRemoteSwiftPackageReference "CalendarView" */,
+			);
 			productRefGroup = 1D546EF82352BABD005026D6 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 1D02D91D2386217600FB28D5 /* Products */;
+					ProjectRef = 1D02D91C2386217600FB28D5 /* CalendarView.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				1D546EF62352BABD005026D6 /* FitForFree */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		1D02D9232386217600FB28D5 /* CalendarView.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = CalendarView.app;
+			remoteRef = 1D02D9222386217600FB28D5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1D02D9252386217600FB28D5 /* CalendarViewTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = CalendarViewTests.xctest;
+			remoteRef = 1D02D9242386217600FB28D5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1D02D9272386217600FB28D5 /* CalendarView_iOS.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CalendarView_iOS.framework;
+			remoteRef = 1D02D9262386217600FB28D5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		1D546EF52352BABD005026D6 /* Resources */ = {
@@ -323,6 +400,7 @@
 				1D546EFB2352BABD005026D6 /* AppDelegate.swift in Sources */,
 				C4D2B595236FA771006EEDE5 /* Swift+Gif.swift in Sources */,
 				C4D2B59B236FC542006EEDE5 /* HistoryViewController.swift in Sources */,
+				1D02D93023862C3000FB28D5 /* dateCellCollectionViewCell.swift in Sources */,
 				FB2F86712363840000FF7AF3 /* WorkoutRunnerViewController.swift in Sources */,
 				FBC8358623636291009097B9 /* SingleWorkoutViewController.swift in Sources */,
 				FBAA1E75235DF7EC000833DD /* WorkoutData.swift in Sources */,
@@ -335,6 +413,7 @@
 				1D546EFD2352BABD005026D6 /* SceneDelegate.swift in Sources */,
 				FBC0730F236B3E6500D87219 /* Utils.swift in Sources */,
 				FB9794D32368993F00415849 /* StoreWorkoutDataInStorage.swift in Sources */,
+				1D02D918238617BB00FB28D5 /* calendarViewController.swift in Sources */,
 				FB97C45F2385937900045068 /* WarmupViewController.swift in Sources */,
 				FBFCDE2C236B59FE00E4C5D5 /* PlanAlimenticio.swift in Sources */,
 				FBEC468023634B97009EA891 /* AllWorkoutsTableViewController.swift in Sources */,
@@ -540,6 +619,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1D02D92C2386222F00FB28D5 /* XCRemoteSwiftPackageReference "CalendarView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mmick66/CalendarView.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCVersionGroup section */
 		FBC07304236B390600D87219 /* StoredData.xcdatamodeld */ = {

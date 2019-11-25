@@ -34,7 +34,7 @@ class calendarViewController: UIViewController, UICollectionViewDelegate, UIColl
         if (indexPath.row < 3) {
             cell.dateText.text = ""
         } else {
-            cell.dateText.text = "\(indexPath.row - 2)"
+            cell.dateText.text = "\(indexPath.row - 3)"
             cell.backgroundColor = UIColor.cyan
         }
     
@@ -43,11 +43,11 @@ class calendarViewController: UIViewController, UICollectionViewDelegate, UIColl
       return cell
     }
     
-    @IBOutlet weak var lblCalories: UILabel!
+    @IBOutlet weak var txtCalories: UITextView!
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let calories = Int.random(in: 50 ..< 300)
-        lblCalories.text = "El día \(indexPath.row - 2) de Noviembre quemaste \(calories) calorías"
+        txtCalories.text = "El día \(indexPath.row - 3) de Noviembre quemaste \(calories) calorías"
     }
     
     override func viewDidLoad() {

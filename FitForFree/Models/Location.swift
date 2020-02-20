@@ -10,13 +10,17 @@ import UIKit
 import MapKit
 
 class Location: NSObject {
-    var pins : [CLLocationCoordinate2D]!
+    var latitud: CLLocationDegrees!
+    var longitud: CLLocationDegrees!
     var contacto : String!
     var horario : String!
+    var name: String!
     
-    init(pins : [CLLocationCoordinate2D], contacto : String, horario : String) {
-        self.pins = pins
+    init(latitud: Double, longitud: Double, contacto : String, horario : String, name: String) {
+        self.latitud = CLLocationDegrees(exactly: latitud)!
+        self.longitud = CLLocationDegrees(exactly: longitud)!
         self.contacto = contacto
         self.horario = horario
+        self.name = name
     }
 }

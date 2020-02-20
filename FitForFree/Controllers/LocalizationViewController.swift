@@ -15,38 +15,50 @@ class LocalizationViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var lbContacto: UILabel!
     @IBOutlet weak var lbHorario: UILabel!
     
-    var locationData : Location!
+    
+    var locationData : [Location]! = [Location]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        lbContacto.text = locationData.contacto
-        lbHorario.text = locationData.horario
+        lbHorario.lineBreakMode = .byClipping
+        lbContacto.lineBreakMode = .byClipping
+        
+        lbHorario.text = locationData.reduce("Nos puedes encontrar en estos lugares:\n", { (accum, location) in
+            return accum! + "\(String(describing: location.name!)) a las horas \(String(describing: location.horario!))\n"
+
+        })
+        lbContacto.text = locationData.reduce("También nos puedes contactar con los siguientes números\n", { (accum, location) in
+            return accum! + "\(String(describing: location.contacto!))\n"
+            
+        })
         
         setupMap()
     }
     
     func setupMap() {
+        
         mapLocation.isZoomEnabled = true
         
         var annotations = [MKAnnotation]()
-        for pin in locationData.pins {
+        for pin in locationData {
             let annotation = MKPointAnnotation()
-            annotation.coordinate = pin
-            annotation.title = "parque"
-            annotation.subtitle = ""
+            annotation.coordinate = CLLocationCoordinate2D(latitude: pin.latitud, longitude: pin.longitud)
+            annotation.title = pin.name
+            annotation.subtitle = pin.horario
             annotations.append(annotation)
        }
 
         
-        let centerX = locationData.pins.reduce(0.0, { (accum: Double, data: CLLocationCoordinate2D) in accum + data.latitude }) / Double(locationData.pins.count)
-        let centerY = locationData.pins.reduce(0.0, { (accum: Double, data: CLLocationCoordinate2D) in accum + data.longitude }) / Double(locationData.pins.count)
-        
+        let centerX = locationData.reduce(0.0, { (accum: Double, data: Location) in accum + data.latitud }) / Double(locationData.count)
+        let centerY = locationData.reduce(0.0, { (accum: Double, data: Location) in accum + data.longitud }) / Double(locationData.count)
+    
         let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
         let center = CLLocationCoordinate2D(latitude: centerX, longitude: centerY)
         let region = MKCoordinateRegion(center: center, span: span)
         
         mapLocation.setRegion(region, animated: true)
+        mapLocation.addAnnotations(annotations)
     }
 
     /*

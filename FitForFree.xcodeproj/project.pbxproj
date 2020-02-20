@@ -3,11 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		1BB3E7668C40CC32F13BFC19 /* Pods_FitForFree.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C8AEF93D3F843CD497B33D9 /* Pods_FitForFree.framework */; };
+		1D02D918238617BB00FB28D5 /* calendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D02D917238617BB00FB28D5 /* calendarViewController.swift */; };
+		1D02D93023862C3000FB28D5 /* dateCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D02D92F23862C3000FB28D5 /* dateCellCollectionViewCell.swift */; };
 		1D546EFB2352BABD005026D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D546EFA2352BABD005026D6 /* AppDelegate.swift */; };
 		1D546EFD2352BABD005026D6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D546EFC2352BABD005026D6 /* SceneDelegate.swift */; };
 		1D546F022352BABD005026D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D546F002352BABD005026D6 /* Main.storyboard */; };
@@ -22,6 +24,8 @@
 		FB2F86732363842400FF7AF3 /* WorkoutState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2F86722363842400FF7AF3 /* WorkoutState.swift */; };
 		FB9794D1236889B100415849 /* FinishedWorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9794D0236889B100415849 /* FinishedWorkoutViewController.swift */; };
 		FB9794D32368993F00415849 /* StoreWorkoutDataInStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9794D22368993F00415849 /* StoreWorkoutDataInStorage.swift */; };
+		FB97C45F2385937900045068 /* WarmupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB97C45E2385937900045068 /* WarmupViewController.swift */; };
+		FB97C46523859BAD00045068 /* CooldownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB97C46423859BAD00045068 /* CooldownViewController.swift */; };
 		FB9ACF91236B91AB0029D297 /* LocalizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9ACF90236B91AB0029D297 /* LocalizationViewController.swift */; };
 		FB9ACF93236B91FE0029D297 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9ACF92236B91FE0029D297 /* Location.swift */; };
 		FBAA1E75235DF7EC000833DD /* WorkoutData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAA1E74235DF7EC000833DD /* WorkoutData.swift */; };
@@ -39,7 +43,34 @@
 		FBFCDE2E236B5F9000E4C5D5 /* PlanAlimenticioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBFCDE2D236B5F9000E4C5D5 /* PlanAlimenticioViewController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		1D02D9222386217600FB28D5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1D02D91C2386217600FB28D5 /* CalendarView.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BEFD654F1ACC072000ADE917;
+			remoteInfo = CalendarView;
+		};
+		1D02D9242386217600FB28D5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1D02D91C2386217600FB28D5 /* CalendarView.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BEFD65641ACC072000ADE917;
+			remoteInfo = CalendarViewTests;
+		};
+		1D02D9262386217600FB28D5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1D02D91C2386217600FB28D5 /* CalendarView.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = ADC21D7B208C5DE400200022;
+			remoteInfo = CalendarView_iOS;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		1D02D917238617BB00FB28D5 /* calendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calendarViewController.swift; sourceTree = "<group>"; };
+		1D02D91C2386217600FB28D5 /* CalendarView.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CalendarView.xcodeproj; path = CalendarView/CalendarView.xcodeproj; sourceTree = "<group>"; };
+		1D02D92F23862C3000FB28D5 /* dateCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dateCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		1D546EF72352BABD005026D6 /* FitForFree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitForFree.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D546EFA2352BABD005026D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D546EFC2352BABD005026D6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,12 +84,14 @@
 		C4D2B594236FA771006EEDE5 /* Swift+Gif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Swift+Gif.swift"; sourceTree = "<group>"; };
 		C4D2B596236FA792006EEDE5 /* workout1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = workout1.gif; sourceTree = "<group>"; };
 		C4D2B598236FAD62006EEDE5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		C4D2B59A236FC542006EEDE5 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HistoryViewController.swift; path = Controllers/HistoryViewController.swift; sourceTree = "<group>"; };
+		C4D2B59A236FC542006EEDE5 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		D17EF732CFEAC6F0956C1500 /* Pods-FitForFree.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitForFree.release.xcconfig"; path = "Target Support Files/Pods-FitForFree/Pods-FitForFree.release.xcconfig"; sourceTree = "<group>"; };
 		FB2F86702363840000FF7AF3 /* WorkoutRunnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutRunnerViewController.swift; sourceTree = "<group>"; };
 		FB2F86722363842400FF7AF3 /* WorkoutState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutState.swift; sourceTree = "<group>"; };
 		FB9794D0236889B100415849 /* FinishedWorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishedWorkoutViewController.swift; sourceTree = "<group>"; };
 		FB9794D22368993F00415849 /* StoreWorkoutDataInStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreWorkoutDataInStorage.swift; sourceTree = "<group>"; };
+		FB97C45E2385937900045068 /* WarmupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarmupViewController.swift; sourceTree = "<group>"; };
+		FB97C46423859BAD00045068 /* CooldownViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CooldownViewController.swift; sourceTree = "<group>"; };
 		FB9ACF90236B91AB0029D297 /* LocalizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationViewController.swift; sourceTree = "<group>"; };
 		FB9ACF92236B91FE0029D297 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		FBAA1E74235DF7EC000833DD /* WorkoutData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutData.swift; sourceTree = "<group>"; };
@@ -88,6 +121,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D02D91D2386217600FB28D5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D02D9232386217600FB28D5 /* CalendarView.app */,
+				1D02D9252386217600FB28D5 /* CalendarViewTests.xctest */,
+				1D02D9272386217600FB28D5 /* CalendarView_iOS.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		1D546EEE2352BABD005026D6 = {
 			isa = PBXGroup;
 			children = (
@@ -118,7 +161,6 @@
 				1D546EFA2352BABD005026D6 /* AppDelegate.swift */,
 				1D546EFC2352BABD005026D6 /* SceneDelegate.swift */,
 				1D546F002352BABD005026D6 /* Main.storyboard */,
-				C4D2B59A236FC542006EEDE5 /* HistoryViewController.swift */,
 				C4D2B594236FA771006EEDE5 /* Swift+Gif.swift */,
 				C4D2B596236FA792006EEDE5 /* workout1.gif */,
 				1D546F032352BABE005026D6 /* Assets.xcassets */,
@@ -131,6 +173,7 @@
 		4A24BA593E98DB310E2B9876 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1D02D91C2386217600FB28D5 /* CalendarView.xcodeproj */,
 				2C8AEF93D3F843CD497B33D9 /* Pods_FitForFree.framework */,
 			);
 			name = Frameworks;
@@ -179,15 +222,20 @@
 		FBEC467C23634AEC009EA891 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FB97C46423859BAD00045068 /* CooldownViewController.swift */,
 				FB9ACF90236B91AB0029D297 /* LocalizationViewController.swift */,
 				FBFCDE2D236B5F9000E4C5D5 /* PlanAlimenticioViewController.swift */,
 				FB2F86702363840000FF7AF3 /* WorkoutRunnerViewController.swift */,
 				FBC8358723637A7F009097B9 /* ExcerciseViewController.swift */,
 				FBEC467723634ABF009EA891 /* ViewController.swift */,
 				FBEC467F23634B97009EA891 /* AllWorkoutsTableViewController.swift */,
+				1D02D917238617BB00FB28D5 /* calendarViewController.swift */,
 				FBC8358523636291009097B9 /* SingleWorkoutViewController.swift */,
+				FB97C45E2385937900045068 /* WarmupViewController.swift */,
 				FB9794D0236889B100415849 /* FinishedWorkoutViewController.swift */,
+				1D02D92F23862C3000FB28D5 /* dateCellCollectionViewCell.swift */,
 				FBC0730B236B3C4A00D87219 /* WorkoutHistoryViewController.swift */,
+				C4D2B59A236FC542006EEDE5 /* HistoryViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -210,6 +258,8 @@
 			dependencies = (
 			);
 			name = FitForFree;
+			packageProductDependencies = (
+			);
 			productName = FitForFree;
 			productReference = 1D546EF72352BABD005026D6 /* FitForFree.app */;
 			productType = "com.apple.product-type.application";
@@ -238,14 +288,47 @@
 				Base,
 			);
 			mainGroup = 1D546EEE2352BABD005026D6;
+			packageReferences = (
+				1D02D92C2386222F00FB28D5 /* XCRemoteSwiftPackageReference "CalendarView" */,
+			);
 			productRefGroup = 1D546EF82352BABD005026D6 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 1D02D91D2386217600FB28D5 /* Products */;
+					ProjectRef = 1D02D91C2386217600FB28D5 /* CalendarView.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				1D546EF62352BABD005026D6 /* FitForFree */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		1D02D9232386217600FB28D5 /* CalendarView.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = CalendarView.app;
+			remoteRef = 1D02D9222386217600FB28D5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1D02D9252386217600FB28D5 /* CalendarViewTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = CalendarViewTests.xctest;
+			remoteRef = 1D02D9242386217600FB28D5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1D02D9272386217600FB28D5 /* CalendarView_iOS.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CalendarView_iOS.framework;
+			remoteRef = 1D02D9262386217600FB28D5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		1D546EF52352BABD005026D6 /* Resources */ = {
@@ -317,17 +400,21 @@
 				1D546EFB2352BABD005026D6 /* AppDelegate.swift in Sources */,
 				C4D2B595236FA771006EEDE5 /* Swift+Gif.swift in Sources */,
 				C4D2B59B236FC542006EEDE5 /* HistoryViewController.swift in Sources */,
+				1D02D93023862C3000FB28D5 /* dateCellCollectionViewCell.swift in Sources */,
 				FB2F86712363840000FF7AF3 /* WorkoutRunnerViewController.swift in Sources */,
 				FBC8358623636291009097B9 /* SingleWorkoutViewController.swift in Sources */,
 				FBAA1E75235DF7EC000833DD /* WorkoutData.swift in Sources */,
 				FB2F86732363842400FF7AF3 /* WorkoutState.swift in Sources */,
 				FB9794D1236889B100415849 /* FinishedWorkoutViewController.swift in Sources */,
+				FB97C46523859BAD00045068 /* CooldownViewController.swift in Sources */,
 				FBC8358823637A7F009097B9 /* ExcerciseViewController.swift in Sources */,
 				FBEC467A23634ABF009EA891 /* ViewController.swift in Sources */,
 				FBC0730A236B394600D87219 /* SavedWorkout+CoreDataProperties.swift in Sources */,
 				1D546EFD2352BABD005026D6 /* SceneDelegate.swift in Sources */,
 				FBC0730F236B3E6500D87219 /* Utils.swift in Sources */,
 				FB9794D32368993F00415849 /* StoreWorkoutDataInStorage.swift in Sources */,
+				1D02D918238617BB00FB28D5 /* calendarViewController.swift in Sources */,
+				FB97C45F2385937900045068 /* WarmupViewController.swift in Sources */,
 				FBFCDE2C236B59FE00E4C5D5 /* PlanAlimenticio.swift in Sources */,
 				FBEC468023634B97009EA891 /* AllWorkoutsTableViewController.swift in Sources */,
 				FBC0730C236B3C4A00D87219 /* WorkoutHistoryViewController.swift in Sources */,
@@ -532,6 +619,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1D02D92C2386222F00FB28D5 /* XCRemoteSwiftPackageReference "CalendarView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mmick66/CalendarView.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCVersionGroup section */
 		FBC07304236B390600D87219 /* StoredData.xcdatamodeld */ = {
